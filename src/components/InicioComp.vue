@@ -1,10 +1,8 @@
 <template>
 
-    <h1>COMPONENTE DE PAGINA INICIO</h1>
+    <NavbarComp />
 
-    <nav> Barra de nav (hacer componente barra-nav) </nav>
-
-    <nav> Hero con titulo, foto y slogan (hacerlo aca mismo)</nav>
+    <!-- <nav> Hero con titulo, foto y slogan (hacerlo aca mismo)</nav>
 
     <main> 
         <section> Cards de las figuras (hacer componente de cards con la info del json)</section>
@@ -15,12 +13,13 @@
     </main>
 
 
-    <foooter> Footer con navegacion, logo y derechos reservados (hacerlo comp de footer)</foooter>
+    <foooter> Footer con navegacion, logo y derechos reservados (hacerlo comp de footer)</foooter> -->
 
 
 </template>
 
 <script setup>
+    import NavbarComp from './NavbarComp.vue';
         
 </script>
 

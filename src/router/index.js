@@ -1,16 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/InicioView.vue'
+import InicioView from '../views/InicioView.vue'
 
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: HomeView
-  },
-  {
-    path: '/figura',
-    name: 'figura',
-    component: () => import(/* webpackChunksName: "figura" */'../views/FiguraView.vue')
+    name: 'inicio',
+    component: InicioView
   }
 ]
 
