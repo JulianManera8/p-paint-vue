@@ -14,18 +14,18 @@
             <a href="aca va la ruta">CONTACTO</a> 
         </div>
 
-        <div class="container-nav-resp esconder ">
+        <div class="container-nav-resp">
             <v-icon class="nav-resp-icono" @click="desplegarMenu" name="gi-hamburger-menu" scale="2" cursor="pointer"/>
-
-            <div v-if="menuVisible" class="nav-resp-lista" id="nav-resp-lista">
-                <ul>
-                    <li class="nav-resp-item"> <a href="aca va la ruta">INICIO</a> </li>
-                    <li class="nav-resp-item"> <a href="aca va la ruta">FIGURAS</a> </li>
-                    <li class="nav-resp-item"> <a href="aca va la ruta">SOBRE MI</a> </li>
-                    <li class="nav-resp-item"> <a href="aca va la ruta">CONTACTO</a> </li>
-                </ul>
-            </div>
-
+            <transition name="navResp">
+                <div v-if="menuVisible" class="nav-resp-lista" id="nav-resp-lista">
+                    <ul>
+                        <li><a href="ruta">INICIO</a></li>
+                        <li><a href="ruta">FIGURAS</a></li>
+                        <li><a href="ruta">SOBRE MI</a></li>
+                        <li><a href="ruta">CONTACTO</a></li>
+                    </ul>
+                </div>
+            </transition>
         </div>
 
         <div class="container-lenguaje">
@@ -47,6 +47,8 @@
     const desplegarMenu = () => {
         menuVisible.value = !menuVisible.value;
     }
+
+
 </script>
 
 <style lang="scss" scoped>
@@ -64,13 +66,13 @@
         background-color: $fondo-navbar;
         width: 100%;
         height: 75px;
-
         .logo {
-        display: block;
-        margin: 0px 0px 0px 5px;
+            display: block;
+            margin: 0px 0px 0px 5px;
         }
     }
-    
+
+
     .container-navegacion {
         display: flex;
         gap: 20px;
@@ -100,14 +102,26 @@
             display: block;
             cursor: pointer;
         }
-        
     }
     
     .container-nav-resp {
         display: none;
     }
 
+    .navResp-enter-from {
+        position: absolute;
+    }
+
+    .navResp-enter-active, .navResp-leave-active {
+        transition: all 0.5s ease;
+    }
+
+    .navResp-enter-from, .navResp-leave-to {
+        opacity: 0;
+    }
+
     @media (width < 581px) {
+
         .container-navegacion {
             display: none;
         }
@@ -125,6 +139,7 @@
             top: 73px;
             background-color: $fondo-navbar;
             width: 100%;
+            z-index: 1;
             
             ul {
                 padding: 0px !important;
