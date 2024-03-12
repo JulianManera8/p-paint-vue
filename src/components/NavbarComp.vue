@@ -1,5 +1,6 @@
 <template>
     <section id="navbar">
+
         <div class="container-logo">
             <a href="#top-page">
                 <img class="logo" src="../assets/imagenes/img-navbar/logo.png" width="75px">
@@ -13,10 +14,10 @@
             <a href="aca va la ruta">CONTACTO</a> 
         </div>
 
-        <div class="container-nav-resp esconder">
-            <v-icon class="nav-resp-icono" name="gi-hamburger-menu" scale="2"/>
+        <div class="container-nav-resp esconder ">
+            <v-icon class="nav-resp-icono" @click="desplegarMenu" name="gi-hamburger-menu" scale="2" cursor="pointer"/>
 
-            <div class="nav-resp-lista">
+            <div v-if="menuVisible" class="nav-resp-lista" id="nav-resp-lista">
                 <ul>
                     <li class="nav-resp-item"> <a href="aca va la ruta">INICIO</a> </li>
                     <li class="nav-resp-item"> <a href="aca va la ruta">FIGURAS</a> </li>
@@ -35,11 +36,17 @@
                 <img class="flag" src="../assets/imagenes/img-navbar/gb.svg" alt="" width="25px">
             </div>
         </div>
+
     </section>
 </template>
 
 <script setup>
+    import {ref} from 'vue'
+    var menuVisible = ref(false);
 
+    const desplegarMenu = () => {
+        menuVisible.value = !menuVisible.value;
+    }
 </script>
 
 <style lang="scss" scoped>
@@ -62,9 +69,8 @@
         display: block;
         margin: 0px 0px 0px 5px;
         }
-
     }
-
+    
     .container-navegacion {
         display: flex;
         gap: 20px;
@@ -83,7 +89,6 @@
         }
     }
     
-    
     .container-lenguaje {
         display: flex;
         gap: 10px;
@@ -97,12 +102,8 @@
         }
         
     }
-
+    
     .container-nav-resp {
-        display: none;
-    }
-
-    .nav-resp-lista {
         display: none;
     }
 
@@ -115,7 +116,31 @@
             display: flex;
         }
 
+        .nav-resp-lista {
+            display: flex;
+            position: absolute;
+            text-align: center;
+            justify-content: center;
+            left: 0;
+            top: 73px;
+            background-color: $fondo-navbar;
+            width: 100%;
+            
+            ul {
+                padding: 0px !important;
+            }
         
+            li {
+                list-style: none;
+                margin-bottom: 15px;
+
+                a {
+                    text-decoration: none;
+                    color: $texto-navbar;
+                    font-weight: 500;
+                }
+            }
+        }
         
     }
 
