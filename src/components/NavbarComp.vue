@@ -70,6 +70,7 @@
             display: block;
             margin: 0px 0px 0px 5px;
         }
+        z-index: 1000;
     }
 
 

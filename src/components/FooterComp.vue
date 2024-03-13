@@ -3,14 +3,13 @@
         <div class="footer-content">
             <div class="cont-logo-titulo"> 
                 <div class="imagen">
-                    <img class="logo" src="../assets/imagenes/img-navbar/logo.png" width="190px">
+                    <img class="logo" src="../assets/imagenes/img-navbar/logo.png" width="170px">
                 </div>
                 <h3 class="titulo"> Print & Paint.</h3>
-
             </div>
 
             <div class="container-navegacion">
-                <h4>NAVEGACION</h4>
+                <h5>NAVEGACION</h5>
                 <ul>
                     <li><a href="ruta">INICIO</a></li>
                     <li><a href="ruta">FIGURAS</a></li>
@@ -21,19 +20,31 @@
 
             <div class="container-newsletter">
                 <div class="newsletter">
-                    <h4> NEWSLETTER</h4>
-                    <input type="email" placeholder="Correo Electronico">
-                    <button type="submit">Quiero novedades!</button>
+                    <h5> NEWSLETTER</h5>
+                    <input type="mail" placeholder="Correo Electronico" v-model="mail">
+                    <button type="submit" id="btn" @click.prevent="guardarMail">Quiero novedades!</button>
                 </div>
-            </div>
-
-            
+            </div>  
         </div>
     </footer>
 </template>
 
 <script setup>
+    import {ref} from 'vue'
+    var mail = ref('')
 
+
+    const guardarMail = () => {
+        var btn = document.getElementById('btn');
+        btn.textContent = "GUARDADO!"
+
+        setTimeout(() => {
+            btn.textContent = "Quiero novedades!"
+
+            mail.value = ''
+        }, 3500);
+        
+    }
 
 </script>
 
@@ -50,7 +61,7 @@
         background-color: $fondo-navbar;
         width: 100%;
         min-width: 100%;
-        height: 250px;
+        height: 200px;
         box-sizing: border-box;
         padding: 20px;
         position: absolute;
@@ -63,7 +74,6 @@
         align-items: center;
         justify-content: center;
         text-align: center;
-        width: 33%;
 
         .logo{
             display: block;
@@ -71,7 +81,7 @@
         }
 
         .logo:hover {
-            scale: 115%;
+            scale: 110%;
             transition: 0.5s;
         }
 
@@ -81,7 +91,6 @@
     }
 
     .container-navegacion {
-        width: 33%;
 
         ul {
             display: flex;
@@ -98,7 +107,7 @@
         }
 
         a {
-            font-size: 18px;
+            font-size: 14px;
             font-weight: 500;
             margin: 0px 4px;
             font-family: "Noto Sans", sans-serif;
@@ -110,7 +119,7 @@
             color: $texto-navbar-hover;
         }
 
-        h4 {
+        h5 {
             margin-bottom: -10px;
             text-decoration: underline;
 
@@ -120,8 +129,6 @@
 
     .container-newsletter {
         display: flex;
-        width: 33%;
-        margin: auto;
 
         .newsletter {
             display: flex;
@@ -131,8 +138,8 @@
             gap: 15px;
             margin: auto;
 
-            h4 {
-                margin-bottom: 10px;
+            h5 {
+                margin-bottom: 0px;
                 text-decoration: underline;
             }
 
@@ -142,16 +149,18 @@
 
             input {
                 background-color: $fondo-input-footer;
-                height: 40px;
+                height: 20px;
                 border-radius: 0.8em;
                 padding: 5px 8px;
+                font-size: 15px;
             }
 
             button {
                 background-color: $fondo-btn-footer;
-                height: 40px;
+                height: 30px;
                 border-radius: 0.5em;
                 padding: 5px 8px;
+                font-size: 15px;
                 cursor: pointer;
                 transition: 0.5s;
             }
@@ -162,9 +171,13 @@
         }
     }
 
-    @media (width < 581px) {
+    @media (width < 750px) {
 
-        
+        .footer-content {
+            flex-wrap: wrap;
+            height: fit-content;
+            gap: 5px;
+        }
     }
 
 </style>
