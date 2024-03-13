@@ -1,6 +1,6 @@
 {
     "goku" : {
-        "nombre-figura": "GOKU SSJ 1 - Namek",
+        "nombreFigura": "GOKU SSJ 1 - Namek",
         "medidas": "12cm length x 5cm width.",
         "impresaPor": "Resin printed figure by @elenanocornudo.",
         "pintadaCon": "100% hand painted with acrilic paint and brush.",
@@ -9,7 +9,7 @@
         "descripContexto": "Goku, enraged by the death of his friends by the feared villain Frieza, lets himself be carried away by his fury and becomes the Legendary Super Saiyan. The rest is history..."
     },
     "broly" : {
-        "nombre-figura": "BROLY vs GOKU - OG version",
+        "nombreFigura": "BROLY vs GOKU - OG version",
         "medidaTotal": "14cm length x 12,5cm de ancho (total).",
         "medidaBroly": "Broly: 13cm length x 10cm de width.",
         "medidaGoku": "Goku: 12cm length x 3cm de width.",
@@ -21,7 +21,7 @@
         "descripContexto": "Iconic fragment of the battle between the Z Warriors against Prince Broly, who possessed unimaginable power and only Goku, with the help of the energy of his companions, was able to defeat him."
     },
     "kidbuu" : {
-        "nombre-figura": "KID BUU",
+        "nombreFigura": "KID BUU",
         "medidas": "4cm length x 2cm de width.",
         "impresaPor": "Resin printed figure by @elenanocornudo.",
         "pintadaCon": "100% hand painted with acrilic paint and brush.",
@@ -30,7 +30,7 @@
         "descripContexto": "Kid Buu is the purest and most chaotic form of the villain Buu in Majin Buu saga, known for his destructive nature and lack of morality, representing a formidable threat to Goku and his allies."
     },
     "fatbuu" : {
-        "nombre-figura": "MAJIN BUU - Gran Kaio Absorvido",
+        "nombreFigura": "MAJIN BUU",
         "medidas": "6cm length x 7cm de width.",
         "impresaPor": "Resin printed figure by @elenanocornudo.",
         "pintadaCon": "100% hand painted with acrilic paint and brush.",
@@ -39,7 +39,7 @@
         "descripContexto": "In this form, Majin Buu managed to absorb the Great Kaioshin, obtaining great power and decreasing, initially, the evil he carried inside. Then he ends up becoming an ally of the Z Fighters."
     },
     "frieza" : {
-        "nombre-figura": "FRIEZA FULL POWER - Namek",
+        "nombreFigura": "FRIEZA FULL POWER - Namek",
         "medidas": "8cm length x 6cm de width.",
         "impresaPor": "Resin printed figure by @elenanocornudo.",
         "pintadaCon": "100% hand painted with acrilic paint and brush.",

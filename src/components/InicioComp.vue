@@ -4,13 +4,15 @@
 
     <HeroComp />
 
-    <!-- <main> 
-        <section> Cards de las figuras (hacer componente de cards con la info del json)</section>
+    <main> 
+        <section> 
+            <CardsComp />
+        </section>
 
-        <section> About me y mas info, aca meter homenaje a akira (componente de cards About mia y la de akira)</section>
+        <!-- <section> About me y mas info, aca meter homenaje a akira (componente de cards About mia y la de akira)</section>
 
-        <section> Contacto (hacerlo aca) </section>
-    </main> -->
+        <section> Contacto (hacerlo aca) </section> -->
+    </main> 
     
     <!-- <h1 style="color: white;">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim velit, quidem nesciunt ipsam temporibus quisquam maxime hic suscipit magnam sed deleniti! Earum nam modi distinctio, id asperiores eum velit esse.
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa accusamus et ea facilis sapiente! Perspiciatis aliquid iusto temporibus suscipit sapiente, nisi id, fugiat at placeat veniam magnam distinctio aspernatur officia?
@@ -29,6 +31,7 @@
     import NavbarComp from './NavbarComp.vue';
     import FooterComp from './FooterComp.vue';
     import HeroComp from './HeroComp.vue';
+    import CardsComp from './CardsComp.vue';
 </script>
 
 <style lang="scss" scoped>

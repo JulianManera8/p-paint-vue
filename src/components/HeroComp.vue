@@ -11,9 +11,6 @@
 
     </section>
 
-    <h1 style="color: white;"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur debitis iste eos nihil reiciendis quae adipisci perferendis laudantium? Dolorum quibusdam repellat cupiditate illo fugiat dolore facilis nesciunt tenetur, eum perferendis?
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod eos inventore obcaecati voluptate, molestias suscipit nemo reprehenderit maiores cupiditate ut? Dolorem aliquid, distinctio consectetur aut maiores at quisquam sit consequuntur.
-    </h1>
 </template>
 
 <script setup>
