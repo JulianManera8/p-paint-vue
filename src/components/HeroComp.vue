@@ -61,5 +61,13 @@
             margin-left: 5%;
         }
     }
+
+    @media (width < 400px) {
+        
+        .container-hero {
+            margin-top: 70px !important;
+        }
+        
+    }
     
 </style>

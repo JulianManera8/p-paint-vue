@@ -2,21 +2,29 @@
     <div>
         <h1>FIGURAS</h1>
         <section > 
-            <div class="container-card" v-for="(figura, index) in infoFiguras" :key="index">
-                <div class="container-titulo">
-                    <h3 class="titulo"> {{ figura.nombre }}</h3>
+            <div  v-for="(figura, id) in infoFiguras" :key="id">
+                <div class="container-card" :id="figura.id">
+
+                    <div class="container-foto">
+                        <img class="img" :src="figura.img" :alt="figura.alt"/>
+                    </div>
+
+                    <div class="container-titulo">
+                        <h4 class="titulo"> {{ figura.nombre }}</h4>
+                    </div>
+
+                    <div class="container-btn">
+                        <button class="learn-more">
+                            <span class="circle" aria-hidden="true">
+                                <span class="icon arrow"></span>
+                            </span>
+                            <span class="button-text">Mas Info</span>
+                        </button>
+                    </div>
+
                 </div>
-                <div class="container-foto">
-                    <img :src="figura.img" :alt="figura.alt" style="width: 200px;" />
-                </div>
-                <div class="container-btn">
-                    <button class="learn-more">
-                        <span class="circle" aria-hidden="true">
-                        <span class="icon arrow"></span>
-                        </span>
-                        <span class="button-text">Mas Info.</span>
-                    </button>
-                </div>
+
+
             </div>
         </section>
     </div>
@@ -28,12 +36,12 @@
 
 
     const infoFiguras = [
-        {img: require('@/assets/imagenes/img-goku/2gokussjSF.png'), alt: 'goku', nombre: infoFigEs.goku.nombreFigura, btn: 'ver mas'},
-        {img: require('@/assets/imagenes/img-kidbuu/3kidbuuSF.png'), alt: 'kidbuu', nombre: infoFigEs.kidbuu.nombreFigura, btn: 'ver mas'},
-        {img: require('@/assets/imagenes/img-frieza/2friezaSF.png'), alt: 'frieza', nombre: infoFigEs.frieza.nombreFigura, btn: 'ver mas'},
-        {img: require('@/assets/imagenes/img-ozaru/4-ozaru.png'), alt: 'ozaru', nombre: infoFigEs.ozaru.nombreFigura, btn: 'ver mas'},
-        {img: require('@/assets/imagenes/img-broly/6broly-gokuSF.png'), alt: 'broly', nombre: infoFigEs.broly.nombreFigura, btn: 'ver mas'},
-        {img: require('@/assets/imagenes/img-fatbuu/2buufatSF.png'), alt: 'fatbuu', nombre: infoFigEs.fatbuu.nombreFigura, btn: 'ver mas'},
+        {img: require('@/assets/imagenes/img-goku/2gokussjSF.png'), alt: 'goku', id:"goku", nombre: infoFigEs.goku.nombreFigura, btn: 'ver mas'},
+        {img: require('@/assets/imagenes/img-kidbuu/3kidbuuSF.png'), alt: 'kidbuu', id:"kidbuu", nombre: infoFigEs.kidbuu.nombreFigura, btn: 'ver mas'},
+        {img: require('@/assets/imagenes/img-frieza/2friezaSF.png'), alt: 'frieza', id:"frieza", nombre: infoFigEs.frieza.nombreFigura, btn: 'ver mas'},
+        {img: require('@/assets/imagenes/img-ozaru/4-ozaru.png'), alt: 'ozaru', id:"ozaru", nombre: infoFigEs.ozaru.nombreFigura, btn: 'ver mas'},
+        {img: require('@/assets/imagenes/img-broly/6broly-gokuSF.png'), alt: 'broly', id:"broly", nombre: infoFigEs.broly.nombreFigura, btn: 'ver mas'},
+        {img: require('@/assets/imagenes/img-fatbuu/2buufatSF.png'), alt: 'fatbuu', id:"fatbuu", nombre: infoFigEs.fatbuu.nombreFigura, btn: 'ver mas'},
     ]
 
     console.log(infoFiguras)
@@ -43,18 +51,22 @@
 
 <style lang="scss" scoped>
 
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
     h1 {
         display: flex;
         text-align: center;
         justify-content: center;
         font-size: clamp(4vw, 4vw, 20px);
+        font-family: "Montserrat", sans-serif;
     }
 
     section {
         display: flex;
         flex-wrap: wrap;
         gap: 40px;
-        margin: 20px 75px;
+        margin: 20px 75px 120px 75px;
         justify-content: center;
         text-align: center;
     }
@@ -62,12 +74,78 @@
     .container-card {
         display: flex;
         flex-direction: column;
-        border: 2px solid black;
-        width: min-content;
+        width: 350px;
+        height: 420px !important;
         height: min-content;
+        font-family: "Montserrat", sans-serif;
+        border-radius: 2em;
+        box-shadow: 0px 0px 20px rgba(138, 138, 138, 0.711);
+        margin-top: 30px;
+
     }
 
+    #goku {
+        background: linear-gradient(to bottom, rgb(255, 233, 154), white);
+        .circle {
+            background-color: rgb(255, 233, 154);
+        }
+    }
+    #kidbuu {
+        background: linear-gradient(to bottom, rgba(212, 0, 255, 0.356), white);
+        .circle {
+            background-color: rgba(212, 0, 255, 0.356);
+        }
+    }
+    #frieza {
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.412), white);
+        .circle {
+            background-color: rgba(0, 0, 0, 0.412);
+        }
+    }
+    #ozaru {
+        background: linear-gradient(to bottom, rgba(0, 94, 255, 0.35), white);
+        .circle {
+            background-color: rgba(0, 94, 255, 0.35);
+        }
+    }
+    #broly {
+        background: linear-gradient(to bottom, rgba(132, 255, 0, 0.405), white);
+        .circle {
+            background-color: rgba(132, 255, 0, 0.405);
+        }
+    }
+    #fatbuu {
+        background: linear-gradient(to bottom, rgba(212, 0, 255, 0.356), white);
+        .circle {
+            background-color: rgba(212, 0, 255, 0.356);
+        }
+    }
 
+    .container-titulo {
+        display: flex;
+        justify-content: center;
+        height: 25px !important;
+        align-items: center;
+        padding-top: 10px;
+        h4 {
+            margin-top: 40px;;
+        }
+    }
+
+    .container-foto {
+        height: 315px;
+        width: 350px;
+        img {
+            height: 100%;
+            object-fit: cover;
+        }
+        border-top-right-radius: 2em;
+        border-top-left-radius: 2em;
+    }
+
+    .container-btn {
+        margin-top: 7px;
+    }
     
     //ESTILOS BOTON MAS INFO
     
@@ -83,11 +161,11 @@
         padding: 0;
         font-size: inherit;
         font-family: inherit;
-        scale: 70%;
+        scale: 60%;
     }
 
     button.learn-more {
-        width: 12rem;
+        width: 11rem;
         height: auto;
     }
 
@@ -98,7 +176,6 @@
         margin: 0;
         width: 3rem;
         height: 3rem;
-        background: #282936;
         border-radius: 1.625rem;
     }
 
@@ -108,7 +185,7 @@
         top: 0;
         bottom: 0;
         margin: auto;
-        background: #fff;
+        background: #000000;
     }
 
     button.learn-more .circle .icon.arrow {
@@ -126,8 +203,8 @@
         right: 0.0625rem;
         width: 0.625rem;
         height: 0.625rem;
-        border-top: 0.125rem solid #fff;
-        border-right: 0.125rem solid #fff;
+        border-top: 0.125rem solid #000000;
+        border-right: 0.125rem solid #000000;
         transform: rotate(45deg);
     }
 
@@ -152,11 +229,29 @@
     }
 
     button:hover .circle .icon.arrow {
-        background: #fff;
+        background: #000000;
         transform: translate(1rem, 0);
     }
 
     button:hover .button-text {
-        color: #fff;
+        color: #000000;
+    }
+
+    @media (width < 400px) {
+        .container-card {
+            width: 250px !important;
+        }
+
+        .container-foto {
+            height: 315px;
+            width: min-content;
+            width: auto;
+            img {
+                width: 250px !important;
+                object-fit: scale-down;
+            }
+        }
+
+        
     }
 </style>
