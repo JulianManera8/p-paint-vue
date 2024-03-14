@@ -56,7 +56,7 @@
 
     .container-img {
         img {
-            width: 65vw;
+            width: 60vw;
             margin-top: 10%;
             margin-left: 5%;
         }

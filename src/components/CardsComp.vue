@@ -81,6 +81,7 @@
         border-radius: 2em;
         box-shadow: 0px 0px 20px rgba(138, 138, 138, 0.711);
         margin-top: 30px;
+        margin: 10px 10px;
 
     }
 
@@ -138,9 +139,16 @@
         img {
             height: 100%;
             object-fit: cover;
+            transition: 0.4s;
         }
         border-top-right-radius: 2em;
         border-top-left-radius: 2em;
+    }
+
+    img:hover {
+        scale: 110%;
+        transform: translateY(-15px);
+        transition: .4s;
     }
 
     .container-btn {
