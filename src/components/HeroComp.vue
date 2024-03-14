@@ -1,15 +1,18 @@
 <template>
-    <section class="container-hero" style="margin-top: 40px;">   
+    <div id="todo">
+        <section class="container-hero" style="margin-top: 40px">   
 
-        <div class="container-titulo hola">
-            <h1> <span class="print">Print</span> <span class="and">&</span> Paint</h1>
-        </div>  
+            <div class="container-titulo hola">
+                <h1> <span class="print">Print</span> <span class="and">&</span> Paint</h1>
+            </div>  
 
-        <div class="container-img hola">
-            <img class="imagen" src="../assets/imagenes/img-navbar/todos-SF.png" alt="">
-        </div>
+            <div class="container-img hola">
+                <img class="imagen" src="../assets/imagenes/img-navbar/todos-SF.png" alt="">
+            </div>
 
-    </section>
+        </section>
+    </div>
+
 
 </template>
 
@@ -20,13 +23,35 @@
 <style lang="scss" scoped>
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+    #todo {
+        width: 100%;
+        position: relative;
+    }
+
     .container-hero {
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        width: 100%;
         background: linear-gradient(to bottom, $fondo-navbar, rgba(255, 179, 0, 0));
+        width: 100%;
+
+        padding-top: 3%;
+        @media (width > 1200px) {
+            padding-top: 1%;;
+        } 
+        @media (width < 950px) {
+            padding-top: 2%;;
+        }
+        @media (width < 750px) {
+            padding-top: 5%;;
+        }
+        @media (width < 550px) {
+            padding-top: 7%;;
+        }
+        @media (width < 380px) {
+            padding-top: 12%;;
+        }
 
         h1 {
             font-size: clamp(7vw,8vw,9vw);
@@ -57,17 +82,10 @@
     .container-img {
         img {
             width: 60vw;
-            margin-top: 10%;
             margin-left: 5%;
         }
     }
 
-    @media (width < 400px) {
-        
-        .container-hero {
-            margin-top: 70px !important;
-        }
-        
-    }
+
     
 </style>

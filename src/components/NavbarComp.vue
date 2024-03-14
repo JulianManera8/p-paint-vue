@@ -1,6 +1,5 @@
 <template>
     <section id="navbar">
-
         <div class="container-logo">
             <a href="#top-page">
                 <img class="logo" src="../assets/imagenes/img-navbar/logo.png" width="75px">
@@ -65,7 +64,7 @@
         left: 0;
         background-color: $fondo-navbar;
         width: 100%;
-        height: 75px;
+        height: $altura-navbar;
         .logo {
             display: block;
             margin: 0px 0px 0px 5px;
@@ -122,6 +121,10 @@
     }
 
     @media (width < 581px) {
+
+        #navbar {
+            margin-bottom: 30px;
+        }
 
         .container-navegacion {
             display: none;

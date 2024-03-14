@@ -1,7 +1,8 @@
 <template>
-    <div>
+    <div id="todo">
         <h1>FIGURAS</h1>
-        <section > 
+        <section> 
+
             <div  v-for="(figura, id) in infoFiguras" :key="id">
                 <div class="container-card" :id="figura.id">
 
@@ -52,7 +53,7 @@
 <style lang="scss" scoped>
 
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-
+    
 
     h1 {
         display: flex;
@@ -60,6 +61,8 @@
         justify-content: center;
         font-size: clamp(4vw, 4vw, 20px);
         font-family: "Montserrat", sans-serif;
+        margin-top: 70px;
+        margin-bottom: 40px;
     }
 
     section {
@@ -245,7 +248,13 @@
         color: #000000;
     }
 
+
     @media (width < 400px) {
+
+        h1 {
+            font-size: large;
+        }
+
         .container-card {
             width: 250px !important;
         }
@@ -260,6 +269,5 @@
             }
         }
 
-        
     }
 </style>

@@ -52,6 +52,10 @@
 
     @import url('https://fonts.googleapis.com/css2?family=Madimi+One&family=Noto+Sans:ital,wdth,wght@0,62.5..100,100..900;1,62.5..100,100..900&family=Nunito+Sans:opsz,wght@6..12,700&display=swap');
     
+    footer {
+        margin-bottom: 20px;
+    }
+
     .footer-content {
         display: flex;
         flex-direction: row;
@@ -61,9 +65,9 @@
         background-color: $fondo-navbar;
         width: 100%;
         min-width: 100%;
-        height: 200px;
+        height: 230px;
         box-sizing: border-box;
-        padding: 20px;
+        padding: 30px;
         position: absolute;
         left: 0;
     }
@@ -88,6 +92,8 @@
         .titulo {
             margin: 0;
         }
+
+        margin-bottom: 30px;
     }
 
     .container-navegacion {
@@ -169,6 +175,7 @@
                 transition: 0.5s;
             }
         }
+        margin-bottom: 30px;
     }
 
     @media (width < 750px) {
