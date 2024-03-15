@@ -9,8 +9,8 @@
         <div class="container-navegacion">
             <a href="aca va la ruta">INICIO</a> 
             <a href="aca va la ruta">FIGURAS</a> 
-            <a href="aca va la ruta">SOBRE MI</a> 
             <a href="aca va la ruta">CONTACTO</a> 
+            <a href="aca va la ruta">BLOG</a> 
         </div>
 
         <div class="container-nav-resp">
@@ -20,8 +20,8 @@
                     <ul>
                         <li><a href="ruta">INICIO</a></li>
                         <li><a href="ruta">FIGURAS</a></li>
-                        <li><a href="ruta">SOBRE MI</a></li>
                         <li><a href="ruta">CONTACTO</a></li>
+                        <li><a href="ruta">BLOG</a></li>
                     </ul>
                 </div>
             </transition>

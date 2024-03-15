@@ -44,8 +44,6 @@
         {img: require('@/assets/imagenes/img-broly/6broly-gokuSF.png'), alt: 'broly', id:"broly", nombre: infoFigEs.broly.nombreFigura, btn: 'ver mas'},
         {img: require('@/assets/imagenes/img-fatbuu/2buufatSF.png'), alt: 'fatbuu', id:"fatbuu", nombre: infoFigEs.fatbuu.nombreFigura, btn: 'ver mas'},
     ]
-
-    console.log(infoFiguras)
     
 </script>
 

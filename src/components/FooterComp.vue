@@ -13,8 +13,8 @@
                 <ul>
                     <li><a href="ruta">INICIO</a></li>
                     <li><a href="ruta">FIGURAS</a></li>
-                    <li><a href="ruta">SOBRE MI</a></li>
                     <li><a href="ruta">CONTACTO</a></li>
+                    <li><a href="ruta">BLOG</a></li>
                 </ul>
             </div>
 
