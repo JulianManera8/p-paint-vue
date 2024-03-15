@@ -2,33 +2,31 @@
 
     <NavbarComp />
 
-    <HeroComp />
+    <!-- <HeroComp />
 
     <main> 
         <section> 
             <CardsComp />
         </section>
 
-        <!--<section> About me y mas info, aca meter homenaje a akira (componente de cards About mia y la de akira)</section> -->
         <section>
             <ContactoComp />
         </section>
-    </main> 
-    
+    </main>  -->
 
+    <BlogComp />
 
     <FooterComp /> 
-
-
 
 </template>
 
 <script setup>
     import NavbarComp from './NavbarComp.vue';
     import FooterComp from './FooterComp.vue';
-    import HeroComp from './HeroComp.vue';
-    import CardsComp from './CardsComp.vue';
-    import ContactoComp from './ContactoComp.vue';
+    // import HeroComp from './HeroComp.vue';
+    // import CardsComp from './CardsComp.vue';
+    // import ContactoComp from './ContactoComp.vue';
+    import BlogComp from './BlogComp.vue';
 </script>
 
 <style lang="scss" scoped>

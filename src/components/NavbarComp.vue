@@ -10,7 +10,7 @@
             <a href="aca va la ruta">INICIO</a> 
             <a href="aca va la ruta">FIGURAS</a> 
             <a href="aca va la ruta">CONTACTO</a> 
-            <a href="aca va la ruta">BLOG</a> 
+            <router-link to="/blog">BLOG</router-link> 
         </div>
 
         <div class="container-nav-resp">
