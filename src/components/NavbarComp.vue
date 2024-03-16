@@ -7,10 +7,10 @@
         </div>
 
         <div class="container-navegacion">
-            <a href="aca va la ruta">INICIO</a> 
-            <a href="aca va la ruta">FIGURAS</a> 
-            <a href="aca va la ruta">CONTACTO</a> 
-            <router-link to="/blog">BLOG</router-link> 
+            <router-link id="a" to="/">INICIO</router-link> 
+            <router-link id="a" to="/figuras">FIGURAS</router-link> 
+            <router-link id="a" to="/contacto">CONTACTO</router-link> 
+            <router-link id="a" to="/blog">BLOG</router-link> 
         </div>
 
         <div class="container-nav-resp">
@@ -18,10 +18,10 @@
             <transition name="navResp">
                 <div v-if="menuVisible" class="nav-resp-lista" id="nav-resp-lista">
                     <ul>
-                        <li><a href="ruta">INICIO</a></li>
-                        <li><a href="ruta">FIGURAS</a></li>
-                        <li><a href="ruta">CONTACTO</a></li>
-                        <li><a href="ruta">BLOG</a></li>
+                        <li><router-link id="a" to="/">INICIO</router-link> </li>
+                        <li><router-link id="a" to="/figuras">FIGURAS</router-link></li>
+                        <li><router-link id="a" to="/contacto">CONTACTO</router-link></li>
+                        <li><router-link id="a" to="/blog">BLOG</router-link></li>
                     </ul>
                 </div>
             </transition>
@@ -65,10 +65,12 @@
         background-color: $fondo-navbar;
         width: 100%;
         height: $altura-navbar;
+
         .logo {
             display: block;
             margin: 0px 0px 0px 5px;
         }
+        
         z-index: 1000;
     }
 
@@ -77,7 +79,7 @@
         display: flex;
         gap: 20px;
 
-        a {
+        #a {
             font-size: 16px;
             font-weight: 500;
             margin: 0px 4px;
@@ -86,7 +88,7 @@
             color: $texto-navbar;
         }
 
-        a:hover {
+        #a:hover {
             color: $texto-navbar-hover;
         }
     }
@@ -153,7 +155,7 @@
                 list-style: none;
                 margin-bottom: 15px;
 
-                a {
+                #a {
                     text-decoration: none;
                     color: $texto-navbar;
                     font-weight: 500;
