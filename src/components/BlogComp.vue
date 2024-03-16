@@ -1,26 +1,25 @@
 <template>
-    <div>
-        <NavbarComp />
-
-        <main>
-            <div class="container-cards" v-for="blog in blogs" :key="blog.id">
-                <article>
+    <section>
+        <div v-for="blog in blogs" :key="blog.id">
+            <article :id="blog.id" class="container-card">
+                <div class="container-img">
                     <img :src="blog.url" width="200px" height="200px"/>
-                    <h3>{{ blog.titulo }}</h3>
-                    <p> {{ blog.desc }}</p>
-                    <p> {{ blog.decpBack }}</p>
-                </article>
-                
-            </div>
-        </main>
-
-        <FooterComp />
-    </div>
+                </div>
+                <div class="container-texto">
+                    <div class="cont-front">
+                        <h3>{{ blog.titulo }}</h3>
+                        <p> {{ blog.desc }}</p>
+                    </div>
+                    <div class="cont-back">
+                        <p> {{ blog.decpBack }}</p>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
 </template>
 
 <script setup>
-    import NavbarComp from './NavbarComp.vue';
-    import FooterComp from './FooterComp.vue';
 
     import InfoBlogEs from '../assets/JSON/InfoBlogEs.json';
     
@@ -35,5 +34,20 @@
 </script>
 
 <style lang="scss" scoped>
+    section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        text-align: center;
+    }
 
+    .container-card {
+        width: 400px;
+    }
+
+
+    .cont-back {
+        display: none;
+    }
 </style>
