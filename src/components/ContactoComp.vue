@@ -1,6 +1,6 @@
 <template>
     
-    <h1>CONTACTO</h1>
+    <h1 id="contacto">CONTACTO</h1>
 
     <div class="container-contacto">
         <div class="container-email">

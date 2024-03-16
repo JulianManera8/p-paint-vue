@@ -8,6 +8,16 @@ const routes = [
     component: InicioView
   }, 
   {
+    path: '/figuras',
+    name: 'figuras',
+    component: () => import(/* webpackChunkName: "figuras" */ '../views/FigurasView.vue')
+  },
+  {
+    path: '/contacto',
+    name: 'ccontacto',
+    component: () => import(/* webpackChunkName: "contacto" */ '../views/ContactoView.vue')
+  },
+  {
     path: '/blog',
     name: 'blog',
     component: () => import(/* webpackChunkName: "blog" */ '../views/BlogView.vue')
