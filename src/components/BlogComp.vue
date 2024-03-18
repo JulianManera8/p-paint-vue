@@ -5,18 +5,20 @@
 
         <div v-for="blog in blogs" :key="blog.id">
 
-            <article :id="blog.id" class="container-card">
+            <article class="container-card">
 
                 <div class="container-img">
                     <img :src="blog.url" width="200px" class="img"/>
                 </div>
-                <div class="container-texto">
+                
+                <div class="container-texto" @click="verId(blog.id)">
 
-                    <div class="cont-front">
+                    <div class="cont-front" :id="blog.id">
                         <h3>{{ blog.titulo }}</h3>
                         <p> {{ blog.desc }}</p>
+
                         <div class="container-btn">
-                        <button class="cta">
+                          <button class="cta">
                             <span class="hover-underline-animation"> Leer más </span>
                             <svg
                               id="arrow-horizontal"
@@ -32,11 +34,13 @@
                                 transform="translate(30)"
                               ></path>
                             </svg>
-                        </button>
+                          </button>
                         </div>
-                    </div>
 
-                    <div class="cont-back">
+                    </div>
+                    
+
+                    <div class="cont-back" :id="blog.id+10">
                         <p> {{ blog.decpBack }}</p>
                         <div class="container-btn">
                         <button class="cta">
@@ -68,35 +72,56 @@
 
 <script setup>
 
-    import InfoBlogEs from '../assets/JSON/InfoBlogEs.json';
-    
-    const blogs = [
-        {id: 1, url: require('@/assets/imagenes/img-navbar/tecnica.png'), titulo: InfoBlogEs.tecnicas.titulo, desc: InfoBlogEs.tecnicas.descripcionFront, decpBack: InfoBlogEs.tecnicas.descripcionBack},
-        {id: 2, url: require('@/assets/imagenes/img-navbar/pinceles.png'),titulo: InfoBlogEs.materiales.titulo, desc: InfoBlogEs.materiales.descripcionFront, decpBack: InfoBlogEs.materiales.descripcionBack},
-        {id: 4, url: require('@/assets/imagenes/img-navbar/dragonball.png'),titulo: InfoBlogEs.dragonball.titulo, desc: InfoBlogEs.dragonball.descripcionFront, decpBack: InfoBlogEs.dragonball.descripcionBack},
-        {id: 3, url: require('@/assets/imagenes/img-navbar/akira.png'),titulo: InfoBlogEs.ripAkira.titulo, desc: InfoBlogEs.ripAkira.descripcionFront, decpBack: InfoBlogEs.ripAkira.descripcionBack}
-    ]
+  import InfoBlogEs from '../assets/JSON/InfoBlogEs.json';
+  import {ref} from 'vue';
+  
+  const blogs = [
+    {id: 1, url: require('@/assets/imagenes/img-navbar/tecnica.png'), titulo: InfoBlogEs.tecnicas.titulo, desc: InfoBlogEs.tecnicas.descripcionFront, decpBack: InfoBlogEs.tecnicas.descripcionBack},
+    {id: 2, url: require('@/assets/imagenes/img-navbar/pinceles.png'),titulo: InfoBlogEs.materiales.titulo, desc: InfoBlogEs.materiales.descripcionFront, decpBack: InfoBlogEs.materiales.descripcionBack},
+    {id: 3, url: require('@/assets/imagenes/img-navbar/dragonball.png'),titulo: InfoBlogEs.dragonball.titulo, desc: InfoBlogEs.dragonball.descripcionFront, decpBack: InfoBlogEs.dragonball.descripcionBack},
+    {id: 4, url: require('@/assets/imagenes/img-navbar/akira.png'),titulo: InfoBlogEs.ripAkira.titulo, desc: InfoBlogEs.ripAkira.descripcionFront, decpBack: InfoBlogEs.ripAkira.descripcionBack}
+  ]
+
+  var mostrarFront = ref(true)
+
+  const verId = (id) => {
+
+    mostrarFront.value = !mostrarFront.value
+
+    const id10 = id+10
+    const blogFront = document.getElementById(id);
+    const blogBack = document.getElementById(id10);
+
+    if(!mostrarFront.value) {
+      blogFront.style.display = 'none'
+      blogBack.style.display = 'flex'
+    } else if (mostrarFront.value) {
+      blogFront.style.display = 'block'
+      blogBack.style.display = 'none'
+    }
+
+  }
 
 
 </script>
 
 <style lang="scss" scoped>
-    @import url('https://fonts.googleapis.com/css2?family=Madimi+One&family=Noto+Sans:ital,wdth,wght@0,62.5..100,100..900;1,62.5..100,100..900&family=Nunito+Sans:opsz,wght@6..12,700&display=swap');
-    @import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
-    
-    section {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 60px;
-        text-align: center;
-    }   
+  @import url('https://fonts.googleapis.com/css2?family=Madimi+One&family=Noto+Sans:ital,wdth,wght@0,62.5..100,100..900;1,62.5..100,100..900&family=Nunito+Sans:opsz,wght@6..12,700&display=swap');
+  @import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+  
+  section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 60px;
+      text-align: center;
+  }   
 
-    h1{
+  h1{
         font-family: "Noto Sans", sans-serif;
-    }
+  }
 
-    .container-card {
+  .container-card {
         width: 600px;
         height: 250px;
         display: flex;
@@ -104,9 +129,9 @@
         border-radius: 1.5em;
         box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.739);
         transition: 0.2s ease-out;
-    }
+  }
 
-    .container-card:hover {
+  .container-card:hover {
         box-shadow: 0px 0px 12px rgb(0, 0, 0);
         transition: 0.2s ease-out;
         cursor: pointer;
@@ -121,18 +146,17 @@
             transform: translateX(0);
         }
         
-    }
+  }
 
-    .img {
+  .img {
         display: block;
         height: 100%;
         object-fit: cover;
         border-top-left-radius: 1.5em;
         border-bottom-left-radius: 1.5em;
-    }
+  }
 
-
-    .container-texto {
+  .container-texto {
         font-family: 'Roboto', sans-serif;
         margin-left: 30px;
         margin-right: 20px;
@@ -159,11 +183,12 @@
             width: 100%;
         }
         
-    }
+  }
 
-    .cont-back {
+  .cont-back {
         display: none;
-    }
+  }
+
 
 //parte del boton de leer mas
 .cta {
