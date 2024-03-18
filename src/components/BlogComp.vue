@@ -11,17 +11,54 @@
                     <img :src="blog.url" width="200px" class="img"/>
                 </div>
                 <div class="container-texto">
+
                     <div class="cont-front">
-                        <h4>{{ blog.titulo }}</h4>
+                        <h3>{{ blog.titulo }}</h3>
                         <p> {{ blog.desc }}</p>
-                    </div>
-                    <div class="cont-back">
-                        <p> {{ blog.decpBack }}</p>
+                        <div class="container-btn">
+                        <button class="cta">
+                            <span class="hover-underline-animation"> Leer más </span>
+                            <svg
+                              id="arrow-horizontal"
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="30"
+                              height="10"
+                              viewBox="0 0 46 16"
+                            >
+                              <path
+                                id="Path_10"
+                                data-name="Path 10"
+                                d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z"
+                                transform="translate(30)"
+                              ></path>
+                            </svg>
+                        </button>
+                        </div>
                     </div>
 
-                    <div class="container-btn">
-                        <button> ver mas </button>
+                    <div class="cont-back">
+                        <p> {{ blog.decpBack }}</p>
+                        <div class="container-btn">
+                        <button class="cta">
+                            <span class="hover-underline-animation"> Volver </span>
+                            <svg
+                              id="arrow-horizontal"
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="30"
+                              height="10"
+                              viewBox="0 0 46 16"
+                            >
+                              <path
+                                id="Path_10"
+                                data-name="Path 10"
+                                d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z"
+                                transform="translate(30)"
+                              ></path>
+                            </svg>
+                        </button>
                     </div>
+                    </div>
+
                 </div>
 
             </article>
@@ -45,16 +82,17 @@
 
 <style lang="scss" scoped>
     @import url('https://fonts.googleapis.com/css2?family=Madimi+One&family=Noto+Sans:ital,wdth,wght@0,62.5..100,100..900;1,62.5..100,100..900&family=Nunito+Sans:opsz,wght@6..12,700&display=swap');
-
+    @import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+    
     section {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 40px;
+        gap: 60px;
         text-align: center;
-    }
+    }   
 
-    h1 {
+    h1{
         font-family: "Noto Sans", sans-serif;
     }
 
@@ -63,17 +101,119 @@
         height: 250px;
         display: flex;
         flex-direction: row;
-        border: 3px solid black;
+        border-radius: 1.5em;
+        box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.739);
+        transition: 0.2s ease-out;
+    }
+
+    .container-card:hover {
+        box-shadow: 0px 0px 12px rgb(0, 0, 0);
+        transition: 0.2s ease-out;
+        cursor: pointer;
+        .cta {
+            .hover-underline-animation:after {
+                transform: scaleX(1);
+                transform-origin: bottom left;
+            }
+        }
+
+        .cta svg {
+            transform: translateX(0);
+        }
+        
     }
 
     .img {
         display: block;
         height: 100%;
         object-fit: cover;
+        border-top-left-radius: 1.5em;
+        border-bottom-left-radius: 1.5em;
     }
 
+
+    .container-texto {
+        font-family: 'Roboto', sans-serif;
+        margin-left: 30px;
+        margin-right: 20px;
+        text-align: left;
+        height: 250px;
+        position: relative;
+        width: 100%;
+        h3 {
+            margin-top: 40px;
+            margin-bottom: 30px;
+        }
+
+        p {
+            color: grey;
+            font-size: 15px;
+            margin-bottom: 30px;
+        }
+
+
+        .container-btn {
+            text-align: center;
+            position: absolute;
+            bottom: 15px !important;
+            width: 100%;
+        }
+        
+    }
 
     .cont-back {
         display: none;
     }
+
+//parte del boton de leer mas
+.cta {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.cta span {
+  padding-bottom: 7px;
+  letter-spacing: 4px;
+  font-size: 14px;
+  padding-right: 15px;
+}
+
+.cta svg {
+  transform: translateX(-8px);
+  transition: all 0.3s ease;
+}
+
+.cta:hover svg {
+  transform: translateX(0);
+}
+
+.cta:active svg {
+  transform: scale(0.9);
+}
+
+.hover-underline-animation {
+  position: relative;
+  color: black;
+  padding-bottom: 20px;
+}
+
+.hover-underline-animation:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #000000;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.cta:hover .hover-underline-animation:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
 </style>
