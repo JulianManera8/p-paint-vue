@@ -2,7 +2,7 @@
     "tecnicas": {
         "titulo": "Técnicas de pintado de figuras 3D",
         "descripcionFront": "Exponer arte mediante figuras impresas en 3D, posee sus propias técnicas...",
-        "descripcionBack": "Existen distintas técnicas que varían según la disponibilidad de materiales y la experiencia del artista, pero las más utilizadas son las conocidas como 'pincel seco' y 'lavado'. La primera consiste en cargar el pincel con poca pintura, manteniéndolo seco, para luego pasarlo por las partes con relieve y así resaltarlas con luces. La segunda técnica, el lavado, implica diluir excesivamente la pintura y aplicarla en las áreas más profundas de la figura para crear sombras."
+        "descripcionBack": "Las técnicas varían según la disponibilidad de materiales y la experiencia del artista, pero las más utilizadas son las conocidas como 'pincel seco' y 'lavado'. La primera consiste en cargar el pincel con poca pintura, manteniéndolo seco, para luego pasarlo por las partes con relieve y así resaltarlas con luces. La segunda técnica, el lavado, implica diluir mucho la pintura y aplicarla en las áreas más profundas de la figura para crear sombras."
     },
     "materiales": {
         "titulo": "Materiales convertidos en arte",

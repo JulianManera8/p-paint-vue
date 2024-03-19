@@ -18,10 +18,10 @@
             <transition name="navResp">
                 <div v-if="menuVisible" class="nav-resp-lista" id="nav-resp-lista">
                     <ul>
-                        <li><router-link id="a" to="/">INICIO</router-link> </li>
-                        <li><router-link id="a" to="/figuras">FIGURAS</router-link></li>
-                        <li><router-link id="a" to="/contacto">CONTACTO</router-link></li>
-                        <li><router-link id="a" to="/blog">BLOG</router-link></li>
+                        <li><router-link @click="desplegarMenu" id="a" to="/">INICIO</router-link> </li>
+                        <li><router-link @click="desplegarMenu" id="a" to="/figuras">FIGURAS</router-link></li>
+                        <li><router-link @click="desplegarMenu" id="a" to="/contacto">CONTACTO</router-link></li>
+                        <li><router-link @click="desplegarMenu" id="a" to="/blog">BLOG</router-link></li>
                     </ul>
                 </div>
             </transition>
