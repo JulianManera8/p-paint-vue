@@ -100,9 +100,9 @@
         descripContexto: figuraSelected.descripContexto
     }
 
-    const imgFigura = {
+    // const imgFigura = {
         
-    }
+    // }
     
 
 </script>
