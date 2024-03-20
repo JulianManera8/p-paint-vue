@@ -1,11 +1,11 @@
 <template>
     <div>
-        <FiguraComp />
+        <IndividualComp />
     </div>
 </template>
 
 <script setup>
-  import FiguraComp from '@/components/FiguraComp.vue';
+  import IndividualComp from '@/components/IndividualComp.vue';
 </script>
 
 <style lang="scss" scoped>

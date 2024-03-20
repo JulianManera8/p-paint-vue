@@ -4,7 +4,7 @@
         <section> 
 
             <div  v-for="(figura, id) in infoFiguras" :key="id">
-                <div class="container-card" :id="figura.id">
+                <router-link class="container-card" :id="figura.id" :to="{name: 'individual', params: {id: figura.id}}">
 
                     <div class="container-foto">
                         <img class="img" :src="figura.img" :alt="figura.alt"/>
@@ -23,7 +23,7 @@
                         </button>
                     </div>
 
-                </div>
+                </router-link>
 
 
             </div>
@@ -83,7 +83,8 @@
         box-shadow: 0px 0px 20px rgba(138, 138, 138, 0.711);
         margin-top: 30px;
         margin: 10px 10px;
-
+        text-decoration: none;
+        color: black;
     }
 
     #goku {

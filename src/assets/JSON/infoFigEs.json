@@ -10,14 +10,11 @@
     },
     "broly" : {
         "nombreFigura": "BROLY vs GOKU - OG version",
-        "medidaTotal": "14cm de alto x 12,5cm de ancho (total).",
-        "medidaBroly": "Broly: 13cm de alto x 10cm de ancho.",
-        "medidaGoku": "Goku: 12cm de alto x 3cm de ancho.",
+        "medidaTotal": "14cm de alto x 12,5cm de ancho (total). Broly: 13cm de alto x 10cm de ancho. Goku: 12cm de alto x 3cm de ancho.",
         "impresaPor": "Figura impresa en Resina por @elenanocornudo.",
         "pintadaCon": "Pintado 100% a mano con pinturas acrilicas y a pincel.",
         "barnizado": "Barnizado con acabado mate.",
-        "basePiedra": "Base gris hecha a mano en porcelana fría, pintada y barnizada.",
-        "base": "Base impresa en filamento plástico.",
+        "base": "Base impresa en filamento plástico. Base gris hecha a mano en porcelana fría, pintada y barnizada.",
         "descripContexto": "Fragmento icónico de la sufrida batalla entre los Guerreros Z contra el Príncipe Broly, quien poseía un poder inimaginable y solo Goku, con ayuda de la energia de sus compañeros, pudo vencerlo."
     },
     "kidbuu" : {
