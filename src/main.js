@@ -2,10 +2,10 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import { OhVueIcon, addIcons } from "oh-vue-icons";
-import { GiHamburgerMenu, RiMailSendLine, BiInstagram, BiWhatsapp } from "oh-vue-icons/icons";
+import { GiHamburgerMenu, RiMailSendLine, BiInstagram, BiWhatsapp, FaChevronLeft, FaChevronRight } from "oh-vue-icons/icons";
 
 //agregarle a esta funcion el icono q queramos agg
-addIcons(GiHamburgerMenu, RiMailSendLine, BiInstagram, BiWhatsapp);
+addIcons(GiHamburgerMenu, RiMailSendLine, BiInstagram, BiWhatsapp, FaChevronLeft, FaChevronRight);
 
 const app = createApp(App)
 app.use(router)

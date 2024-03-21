@@ -37,12 +37,12 @@
 
 
     const infoFiguras = [
-        {img: require('@/assets/imagenes/goku/2goku.png'), alt: 'goku', id:"goku", nombre: infoFigEs.goku.nombreFigura, btn: 'ver mas'},
-        {img: require('@/assets/imagenes/kidbuu/3kidbuu.png'), alt: 'kidbuu', id:"kidbuu", nombre: infoFigEs.kidbuu.nombreFigura, btn: 'ver mas'},
-        {img: require('@/assets/imagenes/frieza/2frieza.png'), alt: 'frieza', id:"frieza", nombre: infoFigEs.frieza.nombreFigura, btn: 'ver mas'},
-        {img: require('@/assets/imagenes/ozaru/4ozaru.png'), alt: 'ozaru', id:"ozaru", nombre: infoFigEs.ozaru.nombreFigura, btn: 'ver mas'},
-        {img: require('@/assets/imagenes/broly/2broly.png'), alt: 'broly', id:"broly", nombre: infoFigEs.broly.nombreFigura, btn: 'ver mas'},
-        {img: require('@/assets/imagenes/fatbuu/2fatbuu.png'), alt: 'fatbuu', id:"fatbuu", nombre: infoFigEs.fatbuu.nombreFigura, btn: 'ver mas'},
+        {img: require('@/assets/imagenes/goku/1goku.png'), alt: 'goku', id:"goku", nombre: infoFigEs.goku.nombreFigura, btn: 'ver mas'},
+        {img: require('@/assets/imagenes/kidbuu/1kidbuu.png'), alt: 'kidbuu', id:"kidbuu", nombre: infoFigEs.kidbuu.nombreFigura, btn: 'ver mas'},
+        {img: require('@/assets/imagenes/frieza/1frieza.png'), alt: 'frieza', id:"frieza", nombre: infoFigEs.frieza.nombreFigura, btn: 'ver mas'},
+        {img: require('@/assets/imagenes/ozaru/1ozaru.png'), alt: 'ozaru', id:"ozaru", nombre: infoFigEs.ozaru.nombreFigura, btn: 'ver mas'},
+        {img: require('@/assets/imagenes/broly/1broly.png'), alt: 'broly', id:"broly", nombre: infoFigEs.broly.nombreFigura, btn: 'ver mas'},
+        {img: require('@/assets/imagenes/fatbuu/1fatbuu.png'), alt: 'fatbuu', id:"fatbuu", nombre: infoFigEs.fatbuu.nombreFigura, btn: 'ver mas'},
     ]
     
 </script>

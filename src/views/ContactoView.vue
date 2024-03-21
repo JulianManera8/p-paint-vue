@@ -9,5 +9,7 @@
 </script>
 
 <style lang="scss" scoped>
-
+    * {
+        margin-top: 130px;
+    }
 </style>
