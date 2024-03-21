@@ -142,6 +142,7 @@
             height: 100%;
             object-fit: cover;
             transition: 0.4s;
+            filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.418));
         }
         border-top-right-radius: 2em;
         border-top-left-radius: 2em;

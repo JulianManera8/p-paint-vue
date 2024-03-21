@@ -31,18 +31,18 @@
 
             <section class="container-fotos"> 
                 <div class="cont-imgPrincipal">
-                    <img :src="imgFigura[0].url1" :id="imgFigura[0].idImg1" alt="" width="400px">
+                    <img class="princFigura" :src="imgPrinc" :id="imgFigura[0].idImg1" :alt="infoFigura.nombre" :title="infoFigura.nombre">
                 </div>
                 <div class="cont-imgSec">
-                    <img :src="imgFigura[1].url2"  alt="" :id="imgFigura[1].idImg2" width="75px">
-                    <img :src="imgFigura[2].url3" alt="" :id="imgFigura[2].idImg3" width="75px">
-                    <img :src="imgFigura[3].url4" alt="" :id="imgFigura[3].idImg4" width="75px">
-                    <img :src="imgFigura[4].url5" alt="" :id="imgFigura[4].idImg5" width="75px">
+                    <img class="otraFigura" @click="cambiar(0)" :src="imgFigura[0].url1"  :alt="infoFigura.nombre" :id="imgFigura[0].idImg1" :title="infoFigura.nombre" width="75px"> 
+                    <img class="otraFigura" @click="cambiar(1)" :src="imgFigura[1].url2"  :alt="infoFigura.nombre" :id="imgFigura[1].idImg2" :title="infoFigura.nombre" width="75px">
+                    <img class="otraFigura" @click="cambiar(2)" :src="imgFigura[2].url3" :alt="infoFigura.nombre" :id="imgFigura[2].idImg3" :title="infoFigura.nombre" width="75px">
+                    <img class="otraFigura" @click="cambiar(3)" :src="imgFigura[3].url4" :alt="infoFigura.nombre" :id="imgFigura[3].idImg4" :title="infoFigura.nombre"  width="75px">
+                    <img class="otraFigura" @click="cambiar(4)" :src="imgFigura[4].url5" :alt="infoFigura.nombre" :id="imgFigura[4].idImg5" :title="infoFigura.nombre" width="75px">
                 </div>
             </section>
 
         </div>
-
 
         <!-- <section>
             <h2> Tambien te pueden interesar: </h2>
@@ -82,6 +82,7 @@
 //resto del js
     import infoFigEs from '../assets/JSON/infoFigEs.json'
     import {useRoute } from 'vue-router';
+    import { ref } from 'vue';
 
     const route = useRoute();
     var idFigura = route.params.id
@@ -108,6 +109,29 @@
         {idImg5: `${idFigura}5`, url5: require(`@/assets/imagenes/${idFigura}/5${idFigura}.png`)}
     ]
     
+    var imgPrinc = ref(imgFigura[0].url1)
+
+    const cambiar = (i) => {
+
+        switch (i) {
+            case i = 0:
+                imgPrinc.value = imgFigura[i].url1
+                break;
+            case i = 1:
+                imgPrinc.value = imgFigura[i].url2
+                break;
+            case i = 2:
+                imgPrinc.value = imgFigura[i].url3
+                break;
+            case i = 3:
+                imgPrinc.value = imgFigura[i].url4
+                break;
+            case i = 4:
+                imgPrinc.value = imgFigura[i].url5
+                break;
+        }
+
+    }
 
 </script>
 
@@ -144,5 +168,32 @@
         display: flex;
         flex-direction: column;
         width: 55vw;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
     }
+
+    .cont-imgPrincipal{
+        height: 500px;
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+            filter: drop-shadow(0px 0px 70px rgb(255, 196, 0));
+        }
+    }
+    
+    .cont-imgSec {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        height: 100px;
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+        }
+    }
+
 </style>
