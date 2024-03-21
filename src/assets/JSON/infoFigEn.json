@@ -1,0 +1,59 @@
+{
+    "goku" : {
+        "nombreFigura": "GOKU SSJ 1 - Namek",
+        "medidas": "12cm length x 5cm width.",
+        "impresaPor": "Resin printed figure by @elenanocornudo.",
+        "pintadaCon": "100% hand painted with acrilic paint and brush.",
+        "barnizado": "Varnished with a matte finish.",
+        "base": "Plastic filament printed base.",
+        "descripContexto": "Goku, enraged by the death of his friends by the feared villain Frieza, lets himself be carried away by his fury and becomes the Legendary Super Saiyan. The rest is history..."
+    },
+    "broly" : {
+        "nombreFigura": "BROLY vs GOKU - OG version",
+        "medidaTotal": "14cm length x 12,5cm de ancho (total).",
+        "medidaBroly": "Broly: 13cm length x 10cm de width.",
+        "medidaGoku": "Goku: 12cm length x 3cm de width.",
+        "impresaPor": "Resin printed figure by @elenanocornudo.",
+        "pintadaCon": "100% hand painted with acrilic paint and brush.",
+        "barnizado": "Varnished with a matte finish.",
+        "basePiedra": "Base gris hecha a mano en porcelana fría, pintada y barnizada.",
+        "base": "Plastic filament printed base.",
+        "descripContexto": "Iconic fragment of the battle between the Z Warriors against Prince Broly, who possessed unimaginable power and only Goku, with the help of the energy of his companions, was able to defeat him."
+    },
+    "kidbuu" : {
+        "nombreFigura": "KID BUU",
+        "medidas": "4cm length x 2cm de width.",
+        "impresaPor": "Resin printed figure by @elenanocornudo.",
+        "pintadaCon": "100% hand painted with acrilic paint and brush.",
+        "barnizado": "Varnished with a matte finish.",
+        "base": "Plastic filament printed base.",
+        "descripContexto": "Kid Buu is the purest and most chaotic form of the villain Buu in Majin Buu saga, known for his destructive nature and lack of morality, representing a formidable threat to Goku and his allies."
+    },
+    "fatbuu" : {
+        "nombreFigura": "MAJIN BUU",
+        "medidas": "6cm length x 7cm de width.",
+        "impresaPor": "Resin printed figure by @elenanocornudo.",
+        "pintadaCon": "100% hand painted with acrilic paint and brush.",
+        "barnizado": "Varnished with a matte finish.",
+        "base": "Plastic filament printed base.",
+        "descripContexto": "In this form, Majin Buu managed to absorb the Great Kaioshin, obtaining great power and decreasing, initially, the evil he carried inside. Then he ends up becoming an ally of the Z Fighters."
+    },
+    "frieza" : {
+        "nombreFigura": "FRIEZA FULL POWER",
+        "medidas": "8cm length x 6cm de width.",
+        "impresaPor": "Resin printed figure by @elenanocornudo.",
+        "pintadaCon": "100% hand painted with acrilic paint and brush.",
+        "barnizado": "Varnished with a matte finish.",
+        "base": "Plastic filament printed base.",
+        "descripContexto": "The alien conqueror and destroyer Frieza was forced to reach FULL POWER in his final form, fighting against none other than Super Saiyan Goku."
+    },
+    "ozaru" : {
+        "nombre-figura": "VEGETA OZARU",
+        "medidas": "6cm length x 7cm de width.",
+        "impresaPor": "Resin printed figure by @elenanocornudo.",
+        "pintadaCon": "100% hand painted with acrilic paint and brush.",
+        "barnizado": "Varnished with a matte finish.",
+        "base": "Plastic filament printed base.",
+        "descripContexto": "The once villainous Saiyayin Prince Vegeta, in his fight against Goku, transforms into the Ozaru, a giant ape with amazing power."
+    }
+}

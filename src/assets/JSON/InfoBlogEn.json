@@ -1,0 +1,22 @@
+{
+    "tecnicas": {
+        "titulo": "Painting Techniques for 3D Figures",
+        "descripcionFront": "Among the many disciplines dedicated to painting, one of them is painting 3D printed figures, which has its own techniques.",
+        "descripcionBack": "This discipline, like each of the existing ones, has its peculiarities. There are different techniques that vary depending on the availability of materials and the artist's experience, but the most commonly used ones are known as 'dry brush' and 'washed painting'. The firs one involves loading the brush with little paint, keeping it dry, and then passing it over the raised parts to highlight them. The second technique, washed painting, involves excessively diluting the paint and applying it to the deepest areas of the figure to create shadows."
+    },
+    "materiales": {
+        "titulo": "Materials Turned into Art",
+        "descripcionFront": "It's a discipline accessible to any budget, thanks to its wide variety of materials and available options.",
+        "descripcionBack": "3D printers are used, mainly those that print in resin, due to their excellent finish. Some people dedicate themselves to printing these figures and sell them to be painted later. The most commonly used paints are acrylics, and brushes can vary in size and shape, usually thin and pointed to allow for more precise details."
+    },
+    "ripAkira": {
+        "titulo": "R.I.P. Akira Toriyama",
+        "descripcionFront": "Unfortunately, Akira Toriyama leaves us too soon, but his legacy remains intact.",
+        "descripcionBack": "Akira Toriyama, born on April 5, 1955 in Nagoya, Japan, is one of the most influential names in the manga and anime industry. He is widely recognized as the creator of the iconic manga 'Dragon Ball'. His ability to bring stories and characters to life through his art has inspired more than one generation. Thank you for everything, Akira Sensei."
+    },
+    "dragonball": {
+        "titulo": "Why Dragon Ball?",
+        "descripcionFront": "For many, included myself, Dragon Ball is more than just drawings; it's a perspective on life.",
+        "descripcionBack": "I choose to paint only figures about Dragon Ball because it's something that has been with me my whole life, adopting many teachings and ways of facing life teached in this 'cartoon'. Its characters never cease to amaze by always surpassing their limits, both physical and personal, giving us great battles, both external and internal."
+    }
+}
