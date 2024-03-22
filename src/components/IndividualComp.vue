@@ -50,28 +50,12 @@
 
         </div>
 
-        <!-- <section>
+        <section>
             <h2> Tambien te pueden interesar: </h2>
-            <div class="container-swipper">
-                <swiper
-                    :slidesPerView="3"
-                    :spaceBetween="30"
-                    :pagination="{
-                      clickable: true,
-                    }"
-                    :modules="Pagination"
-                    class="mySwiper"
-                >
-                    <swiper-slide>Slide 1</swiper-slide>
-                    <swiper-slide>Slide 2</swiper-slide>
-                    <swiper-slide>Slide 4</swiper-slide>
-                    <swiper-slide>Slide 6</swiper-slide>
-                    <swiper-slide>Slide 8</swiper-slide>
-                </swiper>
-            </div>
 
-
-        </section> -->
+            <CarruselComp :infoFigura="infoFigura" :imgFigura="imgFigura"/>
+            
+        </section>
     
     </main>
 
@@ -79,6 +63,7 @@
 </template>
 
 <script setup>
+import CarruselComp from "../components/CarruselComp.vue"
 //todo lo del carrusel
     // import { Swiper, SwiperSlide } from 'swiper/vue';
     // import 'swiper/css';
@@ -242,13 +227,13 @@
         position: absolute !important;
         left: 10px;
         cursor: pointer;
-        z-index: 1000;
+        z-index: 900;
     }
     .icon-right{
         position: absolute !important;
         right: 10px;
         cursor: pointer;
-        z-index: 1000;
+        z-index: 900;
     }
     
     .cont-imgSec {
@@ -261,13 +246,27 @@
         justify-content: center;
         user-select: none;
 
+        
+
         img {
             height: 100%;
-            width: 100%;
             object-fit: contain;
             filter: drop-shadow(10px 3px 3px rgba(0, 0, 0, 0.281));
             cursor: pointer;
             user-select: none;
+        }
+
+        @media (width < 828px) {
+            width: 65vw;
+            overflow: none;
+            flex-wrap: wrap;
+            height: 100%;
+            width: 100%;
+
+            #goku5 {
+                height: 140px !important;
+                object-fit: fill;
+            }
         }
     }
 
