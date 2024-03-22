@@ -51,7 +51,7 @@
         </div>
 
         <section>
-            <h2> Tambien te pueden interesar: </h2>
+            <h2 class="titulo-carrousel"> Tambien te pueden interesar: </h2>
 
             <CarruselComp :idFigura="infoFigura.id"/>
             
@@ -63,14 +63,14 @@
 </template>
 
 <script setup>
-import CarruselComp from "../components/CarruselComp.vue"
-//todo lo del carrusel
+    import CarruselComp from "../components/CarruselComp.vue"
+    //todo lo del carrusel
     // import { Swiper, SwiperSlide } from 'swiper/vue';
     // import 'swiper/css';
     // import 'swiper/css/pagination';
     // import { Pagination } from 'swiper/modules';
 
-//resto del js
+    //resto del js
     import infoFigEs from '../assets/JSON/infoFigEs.json'
     import {useRoute } from 'vue-router';
     import { ref } from 'vue';
@@ -269,6 +269,11 @@ import CarruselComp from "../components/CarruselComp.vue"
                 object-fit: fill;
             }
         }
+    }
+
+    .titulo-carrousel {
+        text-align: center;
+        margin-top: 120px
     }
 
 </style>
