@@ -3,14 +3,11 @@
 
         <Swiper 
         :slidesPerView="slidesPerView"
-        :spaceBetween="30"
+        :spaceBetween="15"
         :loop="true"
         :modules="modules"
-        :pagination="{
-            clickable: true
-        }"
         :autoplay="{
-            delay: 1500,
+            delay: 1750,
             disableOnInteraction: true,
         }"
         class="mySwiper"
@@ -18,9 +15,9 @@
 
             <SwiperSlide class="swiperslide" v-for="figura in nuevoArr" :key="figura.id">
                 <div class="container-card">
-                    <router-link class="container-foto" :id="figura.id" :to="{name: 'individual', params: {id: figura.id}}">
+                    <div class="container-foto" :id="figura.id" @click="verFigura({name: 'individual', params: {id: figura.id}})">
                         <img :src="figura.img" :alt="figura.img">
-                    </router-link >
+                    </div>
                 </div>
             </SwiperSlide>
 
@@ -33,6 +30,7 @@
 <script setup>
     import infoFigEs  from '../assets/JSON/infoFigEs.json'
     import { defineProps, ref } from 'vue';
+    import { useRouter } from 'vue-router';
 
     //swiper
     import {Swiper, SwiperSlide} from 'swiper/vue'
@@ -63,7 +61,7 @@
     const updateSlidesPerView = () => {
         if (window.innerWidth < 450) {
             slidesPerView.value = 1; // Cambia a 1 en pantallas pequeñas
-        } else if (window.innerWidth <= 710) {
+        } else if (window.innerWidth <= 680) {
             slidesPerView.value = 2; // Cambia a 2 en pantallas medianas
         } else {
             slidesPerView.value = 3; // Mantiene 3 en pantallas grandes
@@ -72,14 +70,31 @@
     updateSlidesPerView()
     window.addEventListener('resize', updateSlidesPerView);
     
+    
+
+    //lo de la ruta
+    const router = useRouter()
+    const verFigura = (path) => {
+        router.push(path)
+        setTimeout(() => {
+            window.location.reload();
+        }, 1);
+    }
+
+    // :to="
 </script>
 
 <style lang="scss" scoped>
+
+    .container-todo {
+        background: linear-gradient(to bottom, rgba(255, 208, 0, 0), rgb(255, 236, 169), rgb(255, 227, 151), rgba(255,255,0,0));
+    }
+
     .mySwiper {
+        width: 100%;
         margin-bottom: 120px;
         text-align: center;
         height:250px;
-        background: linear-gradient(to bottom, rgba(255, 208, 0, 0), rgb(255, 236, 169), rgb(255, 227, 151), rgba(255,255,0,0));
         cursor: grab;
         user-select: none;
     }
@@ -87,7 +102,7 @@
     .swiperslide {
         margin: auto;
         display: flex;
-        justify-content: center;
+        justify-content: center !important;
         align-items: center;
         height: 100%;
         margin: 0;
@@ -104,7 +119,7 @@
             margin-bottom: -30px;
             align-items: top;
             transition: 0.3s;
-            filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.418));
+            filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.75));
         };
         cursor: pointer;
 

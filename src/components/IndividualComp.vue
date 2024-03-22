@@ -65,10 +65,6 @@
 <script setup>
     import CarruselComp from "../components/CarruselComp.vue"
     //todo lo del carrusel
-    // import { Swiper, SwiperSlide } from 'swiper/vue';
-    // import 'swiper/css';
-    // import 'swiper/css/pagination';
-    // import { Pagination } from 'swiper/modules';
 
     //resto del js
     import infoFigEs from '../assets/JSON/infoFigEs.json'
