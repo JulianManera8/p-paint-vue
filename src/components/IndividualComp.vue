@@ -53,7 +53,7 @@
         <section>
             <h2> Tambien te pueden interesar: </h2>
 
-            <CarruselComp :infoFigura="infoFigura" :imgFigura="imgFigura"/>
+            <CarruselComp :idFigura="infoFigura.id"/>
             
         </section>
     
@@ -119,6 +119,7 @@ import CarruselComp from "../components/CarruselComp.vue"
         currentIndex.value = (currentIndex.value + 1 + imgFigura.length) % imgFigura.length;
         cambiar(currentIndex.value)
     }
+
 
 
 </script>
