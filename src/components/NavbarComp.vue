@@ -27,7 +27,7 @@
             </transition>
         </div>
 
-        <div class="container-lenguaje">
+        <div class="container-lenguaje" style="opacity: 0;">
             <div>
                 <img class="flag" src="../assets/imagenes/img-navbar/es.svg" alt="" width="25px">
             </div>

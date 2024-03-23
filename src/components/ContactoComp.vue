@@ -118,10 +118,6 @@
         transition: all 0.3s;
     }
 
-
-
-
-
     .wsp {
         position: fixed;
         bottom: 20px;
@@ -129,6 +125,7 @@
         z-index: 0.6;
         border-radius: 50%;
         opacity: 0.7;
+        color: green;
     }
     .wsp:hover {
         scale: 120%;

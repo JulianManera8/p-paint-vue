@@ -169,12 +169,9 @@
                 font-size: 15px;
                 cursor: pointer;
                 transition: 0.5s;
-            }
-            button:hover {
-                background-color: $fondo-navbar;
-                transition: 0.5s;
-            }
+            };
         }
+        
         margin-bottom: 30px;
     }
 

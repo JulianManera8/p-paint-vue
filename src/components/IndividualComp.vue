@@ -29,7 +29,7 @@
 
             </section>
 
-            <section class="container-fotos"> 
+            <section class="container-fotos" :id="idFigura"> 
                 <div class="icon-left">
                     <v-icon @click="left" name="fa-chevron-left" scale="2.3"  animation="pulse" color="grey" speed="slow" />
                 </div>
@@ -85,8 +85,19 @@
         <section>
             <h2 class="titulo-carrousel"> Tambien te pueden interesar: </h2>
 
-            <CarruselComp :idFigura="infoFigura.id"/>
+            <CarruselComp :idFigura="infoFigura.id" :idParaFondo="infoFigura.id"/>
             
+            <div class="container-btn">
+                <router-link id="a" to="/figuras">
+                    <button class="learn-more">
+                        <span class="circle" aria-hidden="true"  :id="infoFigura.id">
+                            <span class="icon arrow"></span>
+                        </span>
+                        <span class="button-text">VER TODOS</span>
+                    </button>
+                </router-link> 
+
+            </div>
         </section>
     
     </main>
@@ -95,7 +106,7 @@
 </template>
 
 <script setup>
-    //el ccarrusel de otras figuras abajo
+    //el carrusel de otras figuras abajo
     import CarruselComp from "../components/CarruselComp.vue"
 
             //todo lo del carrusel responsive
@@ -114,6 +125,7 @@
 
     const route = useRoute();
     var idFigura = route.params.id
+
     const figuraSelected = infoFigEs[idFigura]
 
     const infoFigura = {
@@ -177,7 +189,6 @@
 
     updateSlidesPerView();
     window.addEventListener('resize', updateSlidesPerView);
-    
 
 </script>
 
@@ -190,7 +201,7 @@
         text-align: center;
         justify-content: center;
         font-family: "Montserrat", sans-serif;
-        font-size: clamp(4vw, 4vw, 20px);
+        font-size: clamp(2vw, 4vw, 15px);
     }
 
     .container-figura {
@@ -242,7 +253,6 @@
         justify-content: center;
         text-align: center;
         align-items: center;
-        background: linear-gradient(to bottom, rgb(255, 233, 154), white);
         margin:auto 50px;
         position: relative;
         @media (width < 828px) {
@@ -251,7 +261,26 @@
 
         border-top-right-radius: 10%;
         border-top-left-radius: 10%;
+    }
 
+    //color del fondo segun la figura
+    #goku {
+        background: linear-gradient(to bottom, rgb(255, 233, 154), white);
+    }
+    #ozaru {
+        background: linear-gradient(to bottom, rgba(0, 94, 255, 0.35), white);
+    }
+    #kidbuu {
+        background: linear-gradient(to bottom, rgba(212, 0, 255, 0.356), white);
+    }
+    #frieza {
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.412), white);
+    }
+    #broly {
+        background: linear-gradient(to bottom, rgba(132, 255, 0, 0.405), white);
+    }
+    #fatbuu {
+        background: linear-gradient(to bottom, rgba(212, 0, 255, 0.356), white);
     }
 
     .cont-imgPrincipal{
@@ -343,6 +372,102 @@
         text-transform: uppercase;
         font-size: clamp(4vw, 4vw, 20px);
         margin-bottom: 20px;
+    }
+
+    .container-btn {
+        text-align: center;
+        margin: auto;
+        margin-top: -110px;
+        margin-bottom: 80px;
+    }
+
+    button {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+        outline: none;
+        border: 0;
+        vertical-align: middle;
+        text-decoration: none;
+        background: transparent;
+        padding: 0;
+        font-size: inherit;
+        font-family: inherit;
+        scale: 60%;
+    }
+
+    button.learn-more {
+        width: 11rem;
+        height: auto;
+    }
+
+    button.learn-more .circle {
+        transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+        position: relative;
+        display: block;
+        margin: 0;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 1.625rem;
+    }
+    
+
+    button.learn-more .circle .icon {
+        transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        background: #000000;
+    }
+
+    button.learn-more .circle .icon.arrow {
+        transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+        left: 0.625rem;
+        width: 1.125rem;
+        height: 0.125rem;
+        background: none;
+    }
+
+    button.learn-more .circle .icon.arrow::before {
+        position: absolute;
+        content: "";
+        top: -0.29rem;
+        right: 0.0625rem;
+        width: 0.625rem;
+        height: 0.625rem;
+        border-top: 0.125rem solid #000000;
+        border-right: 0.125rem solid #000000;
+        transform: rotate(45deg);
+    }
+
+    button.learn-more .button-text {
+        transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 0.75rem 0;
+        margin: 0 0 0 1.85rem;
+        color: #282936;
+        font-weight: 700;
+        line-height: 1.6;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    button:hover .circle {
+        width: 100%;
+    }
+
+    button:hover .circle .icon.arrow {
+        background: #000000;
+        transform: translate(1rem, 0);
+    }
+
+    button:hover .button-text {
+        color: #000000;
     }
 
 </style>

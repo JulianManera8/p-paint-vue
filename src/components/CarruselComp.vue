@@ -1,5 +1,5 @@
 <template>
-    <main class="container-todo">
+    <main class="container-todo" :id="props.idFigura">
 
         <Swiper 
         :slidesPerView="slidesPerView"
@@ -15,7 +15,7 @@
 
             <SwiperSlide class="swiperslide" v-for="figura in nuevoArr" :key="figura.id">
                 <div class="container-card">
-                    <div class="container-foto" :id="figura.id" @click="verFigura({name: 'individual', params: {id: figura.id}})">
+                    <div class="container-foto" @click="verFigura({name: 'individual', params: {id: figura.id}})">
                         <img :src="figura.img" :alt="figura.img">
                     </div>
                 </div>
@@ -44,7 +44,7 @@
     const modules = [Autoplay]
 
     const props = defineProps({ 
-        idFigura: String
+        idFigura: String,
     })
 
     //achicar el carrusel cuando se hace responsive
@@ -84,13 +84,31 @@
         }, 1);
     }
 
-
 </script>
 
 <style lang="scss" scoped>
 
     .container-todo {
-        background: linear-gradient(to bottom, rgba(255, 208, 0, 0), rgb(255, 236, 169), rgb(255, 227, 151), rgba(255,255,0,0));
+        
+        #goku {
+            background: linear-gradient(to bottom, rgba(255, 208, 0, 0), rgb(255, 236, 169), rgb(255, 227, 151), rgba(255,255,0,0)) !important;
+        }
+        #ozaru {
+            background: linear-gradient(to bottom, rgba(255, 208, 0, 0), rgba(0, 94, 255, 0.35), rgba(0, 94, 255, 0.35), rgba(255,255,0,0)) !important;
+        }
+        #kidbuu {
+            background: linear-gradient(to bottom, rgba(212, 0, 255, 0.356), white) !important;
+        }
+        #frieza {
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.412), white) !important;
+        }
+        #broly {
+            background: linear-gradient(to bottom, rgba(132, 255, 0, 0.405), white) !important;
+        }
+        #fatbuu {
+            background: linear-gradient(to bottom, rgba(212, 0, 255, 0.356), white) !important;
+        }
+
     }
 
     .mySwiper {
