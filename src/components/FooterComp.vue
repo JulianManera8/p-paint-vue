@@ -11,10 +11,10 @@
             <div class="container-navegacion">
                 <h5>NAVEGACION</h5>
                 <ul>
-                    <li><a href="ruta">INICIO</a></li>
-                    <li><a href="ruta">FIGURAS</a></li>
-                    <li><a href="ruta">CONTACTO</a></li>
-                    <li><a href="ruta">BLOG</a></li>
+                    <li><router-link id="a" to="/">INICIO</router-link></li>
+                    <li><router-link id="a" to="/figuras">FIGURAS</router-link></li>
+                    <li><router-link id="a" to="/contacto">CONTACTO</router-link></li>
+                    <li><router-link id="a" to="/blog">BLOG</router-link></li>
                 </ul>
             </div>
 
