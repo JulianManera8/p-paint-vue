@@ -28,23 +28,42 @@
 </template>
 
 <script setup>
-    import infoFigEs  from '../assets/JSON/infoFigEs.json'
-    import { defineProps, ref } from 'vue';
-    import { useRouter } from 'vue-router';
-
     //swiper
     import {Swiper, SwiperSlide} from 'swiper/vue'
     import "swiper/css"
     import 'swiper/css/pagination'
     import {Autoplay} from 'swiper/modules';
 
+    //resto del js
+    import infoFigEs  from '../assets/JSON/infoFigEs.json'
+    import { defineProps, ref } from 'vue';
+    import { useRouter } from 'vue-router';
+
+
+                //funcionalidad carrusel
     const modules = [Autoplay]
 
     const props = defineProps({ 
         idFigura: String
     })
 
+    //achicar el carrusel cuando se hace responsive
+    const slidesPerView = ref(3); // Valor inicial
+    const updateSlidesPerView = () => {
+        if (window.innerWidth < 450) {
+            slidesPerView.value = 1; // Cambia a 1 en pantallas pequeñas
+        } else if (window.innerWidth <= 680) {
+            slidesPerView.value = 2; // Cambia a 2 en pantallas medianas
+        } else {
+            slidesPerView.value = 3; // Mantiene 3 en pantallas grandes
+        }
+    };
+    
+    updateSlidesPerView()
+    window.addEventListener('resize', updateSlidesPerView);
 
+
+    //arreglos con la info
     const infoFiguras = [
         {img: require('@/assets/imagenes/goku/1goku.png'), alt: 'goku', id:"goku", nombre: infoFigEs.goku.nombreFigura},
         {img: require('@/assets/imagenes/kidbuu/1kidbuu.png'), alt: 'kidbuu', id:"kidbuu", nombre: infoFigEs.kidbuu.nombreFigura},
@@ -56,22 +75,6 @@
 
     var nuevoArr = infoFiguras.filter(figuras => figuras.id != props.idFigura)
 
-    const slidesPerView = ref(3); // Valor inicial
-
-    const updateSlidesPerView = () => {
-        if (window.innerWidth < 450) {
-            slidesPerView.value = 1; // Cambia a 1 en pantallas pequeñas
-        } else if (window.innerWidth <= 680) {
-            slidesPerView.value = 2; // Cambia a 2 en pantallas medianas
-        } else {
-            slidesPerView.value = 3; // Mantiene 3 en pantallas grandes
-        }
-    };
-    updateSlidesPerView()
-    window.addEventListener('resize', updateSlidesPerView);
-    
-    
-
     //lo de la ruta
     const router = useRouter()
     const verFigura = (path) => {
@@ -81,7 +84,7 @@
         }, 1);
     }
 
-    // :to="
+
 </script>
 
 <style lang="scss" scoped>

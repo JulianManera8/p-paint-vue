@@ -40,11 +40,43 @@
                     <v-icon @click="right" name="fa-chevron-right" scale="2.3" animation="pulse" color="grey" speed="slow"/> 
                 </div>
                 <div class="cont-imgSec">
-                    <img class="otraFigura" @click="cambiar(0)" :src="imgFigura[0].url"  :alt="infoFigura.nombre" :id="imgFigura[0].idImg1" :title="infoFigura.nombre" width="75px"> 
-                    <img class="otraFigura" @click="cambiar(1)" :src="imgFigura[1].url"  :alt="infoFigura.nombre" :id="imgFigura[1].idImg2" :title="infoFigura.nombre" width="75px">
-                    <img class="otraFigura" @click="cambiar(2)" :src="imgFigura[2].url" :alt="infoFigura.nombre" :id="imgFigura[2].idImg3" :title="infoFigura.nombre" width="75px">
-                    <img class="otraFigura" @click="cambiar(3)" :src="imgFigura[3].url" :alt="infoFigura.nombre" :id="imgFigura[3].idImg4" :title="infoFigura.nombre"  width="75px">
-                    <img class="otraFigura" @click="cambiar(4)" :src="imgFigura[4].url" :alt="infoFigura.nombre" :id="imgFigura[4].idImg5" :title="infoFigura.nombre" width="75px">
+                    <Swiper
+                    v-if="mostrarSwiper" 
+                    :slidesPerView="slidesPerView"
+                    :spaceBetween="15"
+                    :loop="true"
+                    :modules="modules"
+                    :autoplay="{
+                        delay: 1750,
+                        disableOnInteraction: true,
+                    }"
+                    class="mySwiper"
+                    >
+                
+                        <SwiperSlide class="swiperslide">
+                            <img @click="cambiar(0)" :src="imgFigura[0].url"  :alt="infoFigura.nombre" :id="imgFigura[0].idImg1" :title="infoFigura.nombre" > 
+                        </SwiperSlide>
+                        <SwiperSlide class="swiperslide">
+                            <img @click="cambiar(1)" :src="imgFigura[1].url"  :alt="infoFigura.nombre" :id="imgFigura[1].idImg2" :title="infoFigura.nombre" >
+                        </SwiperSlide>
+                        <SwiperSlide class="swiperslide">
+                            <img @click="cambiar(2)" :src="imgFigura[2].url" :alt="infoFigura.nombre" :id="imgFigura[2].idImg3" :title="infoFigura.nombre" >
+                        </SwiperSlide>
+                        <SwiperSlide class="swiperslide">
+                            <img @click="cambiar(3)" :src="imgFigura[3].url" :alt="infoFigura.nombre" :id="imgFigura[3].idImg4" :title="infoFigura.nombre"  >
+                        </SwiperSlide>
+                        <SwiperSlide class="swiperslide">
+                            <img @click="cambiar(4)" :src="imgFigura[4].url" :alt="infoFigura.nombre" :id="imgFigura[4].idImg5" :title="infoFigura.nombre" >
+                        </SwiperSlide>
+                    
+                    </Swiper>
+                    <section v-if="!mostrarSwiper">
+                        <img @click="cambiar(0)" :src="imgFigura[0].url"  :alt="infoFigura.nombre" :id="imgFigura[0].idImg1" :title="infoFigura.nombre" width="65px"> 
+                        <img @click="cambiar(1)" :src="imgFigura[1].url"  :alt="infoFigura.nombre" :id="imgFigura[1].idImg2" :title="infoFigura.nombre" width="65px">
+                        <img @click="cambiar(2)" :src="imgFigura[2].url" :alt="infoFigura.nombre" :id="imgFigura[2].idImg3" :title="infoFigura.nombre" width="65px">
+                        <img @click="cambiar(3)" :src="imgFigura[3].url" :alt="infoFigura.nombre" :id="imgFigura[3].idImg4" :title="infoFigura.nombre"  width="65px">
+                        <img @click="cambiar(4)" :src="imgFigura[4].url" :alt="infoFigura.nombre" :id="imgFigura[4].idImg5" :title="infoFigura.nombre" width="65px">
+                    </section>
                 </div>
             </section>
 
@@ -63,8 +95,17 @@
 </template>
 
 <script setup>
+    //el ccarrusel de otras figuras abajo
     import CarruselComp from "../components/CarruselComp.vue"
-    //todo lo del carrusel
+
+            //todo lo del carrusel responsive
+    //swiper
+    import {Swiper, SwiperSlide} from 'swiper/vue'
+    import "swiper/css"
+    import 'swiper/css/pagination'
+    import {Autoplay} from 'swiper/modules';
+
+    const modules = [Autoplay]
 
     //resto del js
     import infoFigEs from '../assets/JSON/infoFigEs.json'
@@ -75,8 +116,6 @@
     var idFigura = route.params.id
     const figuraSelected = infoFigEs[idFigura]
 
-    //tengo q asignarle una variable al id, y q esa misma variable 
-    //se vaya cambiando en los distintos elementos
     const infoFigura = {
         id: idFigura,
         nombre: figuraSelected.nombreFigura, 
@@ -96,10 +135,10 @@
         {idImg5: `${idFigura}5`, url: require(`@/assets/imagenes/${idFigura}/5${idFigura}.png`)}
     ]
     
+    //pasar figuras cuando doy click
     var imgPrinc = ref(imgFigura[0].url)
 
     var currentIndex = ref(0);
-
 
     const cambiar = (i) => {
         currentIndex.value = i
@@ -116,7 +155,29 @@
         cambiar(currentIndex.value)
     }
 
+    //activar el carrusel cuando sea responsive
+    
+    var mostrarSwiper = ref(false)
+    var slidesPerView = ref(3)
 
+    const updateSlidesPerView = () => {
+            if (window.innerWidth < 354) {
+                mostrarSwiper.value = true
+                slidesPerView.value = 2; //  
+            } else if (window.innerWidth < 450) {
+                mostrarSwiper.value = true
+                slidesPerView.value = 3; // Cambia a 1 en pantallas pequeñas
+            } else if (window.innerWidth < 600) {
+                mostrarSwiper.value = true
+                slidesPerView.value = 4; // Cambia a 2 en pantallas medianas
+            } else {
+                mostrarSwiper.value = false
+            }
+    };
+
+    updateSlidesPerView();
+    window.addEventListener('resize', updateSlidesPerView);
+    
 
 </script>
 
@@ -129,7 +190,7 @@
         text-align: center;
         justify-content: center;
         font-family: "Montserrat", sans-serif;
-
+        font-size: clamp(4vw, 4vw, 20px);
     }
 
     .container-figura {
@@ -199,12 +260,25 @@
         align-items: center;
         justify-content: space-between;
         position: relative;
-        margin-bottom: 30px;
+
         img {
             height: 100%;
             width: 100%;
             object-fit: contain;
             user-select: none;
+        }
+        
+        #goku1 {
+            margin-top: 20px;
+            margin-bottom: 50px;
+        }
+
+        #frieza1 {
+            margin-bottom: 0px;
+        }
+
+        #fatbuu1 {
+            margin-bottom: 0px;
         }
 
         @media (width < 828px) {
@@ -236,40 +310,39 @@
     .cont-imgSec {
         display: flex;
         flex-direction: row;
-        gap: 20px;
         height: 100px;
-        width: 40vw;
-        margin: auto;
+        width: 60vw;
         justify-content: center;
         user-select: none;
 
-        
-
         img {
-            height: 100%;
+            height: 79px;
             object-fit: contain;
             filter: drop-shadow(10px 3px 3px rgba(0, 0, 0, 0.281));
             cursor: pointer;
             user-select: none;
         }
 
+        section {
+            display: flex;
+            width: 80%;
+            justify-content: space-evenly;
+        }
+
         @media (width < 828px) {
             width: 65vw;
             overflow: none;
-            flex-wrap: wrap;
             height: 100%;
             width: 100%;
-
-            #goku5 {
-                height: 140px !important;
-                object-fit: fill;
-            }
         }
     }
 
     .titulo-carrousel {
         text-align: center;
-        margin-top: 120px
+        margin-top: 100px;
+        text-transform: uppercase;
+        font-size: clamp(4vw, 4vw, 20px);
+        margin-bottom: 20px;
     }
 
 </style>
