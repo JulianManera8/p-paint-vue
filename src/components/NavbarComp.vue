@@ -50,7 +50,7 @@
     }
 
     //todo lo del search bar
-    var lupaTocada = ref(true);
+    var lupaTocada = ref(false);
 
     var valorBusqueda = ref('');
 
