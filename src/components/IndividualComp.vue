@@ -23,8 +23,18 @@
                 </div>
 
                 <div class="container-botones">
-                    <div class="cont-cotizacion"></div>
-                    <div class="cont-volver"></div>
+                    <div class="cont-volver">
+                        <button> Volver </button>
+                    </div>
+                    <div class="cont-cotiz">
+                        <button class="cta">
+                          <span>Pedir cotizacion</span>
+                          <svg width="15px" height="10px" viewBox="0 0 13 10">
+                            <path d="M1,5 L11,5"></path>
+                            <polyline points="8 1 12 5 8 9"></polyline>
+                          </svg>
+                        </button>
+                    </div>
                 </div>
 
             </section>
@@ -374,6 +384,37 @@
         margin-bottom: 20px;
     }
 
+    .container-botones {
+        display: flex;
+        justify-content: right;
+        align-items: center;
+        width: 100%;
+        text-align: right;
+        flex-wrap: wrap-reverse;
+
+        @media (width < 1015px) {
+            justify-content: center;
+            gap: 20px;
+        }
+    }
+
+    .cont-volver {
+        display: flex;
+        text-align: center;
+        margin-left: 10px;
+        @media (width < 992px) {
+            justify-content: center;
+            margin: 0;
+        }
+    }
+
+    .cont-cotiz {
+        // min-width:170px;
+        display: flex;
+        width: fit-content !important;
+        flex-wrap: nowrap;
+    }
+
     .container-btn {
         text-align: center;
         margin: auto;
@@ -381,6 +422,9 @@
         margin-bottom: 80px;
     }
 
+
+
+    //estilos botones
     button {
         position: relative;
         display: inline-block;
@@ -468,6 +512,71 @@
 
     button:hover .button-text {
         color: #000000;
+    }
+
+    .cta {
+        position: relative;
+        margin: auto;
+        padding: 12px 18px;
+        transition: all 0.2s ease;
+        border: none;
+        background: none;
+        cursor: pointer;
+    }
+    
+    .cta:before {
+        content: "";
+        position: absolute;
+        top: -3px;
+        left: 0;
+        display: block;
+        border-radius: 50px;
+        background-color: rgb(252, 177, 36);
+        width: 55px;
+        height: 55px;
+        transition: all 0.3s ease;
+    }
+    
+    .cta span {
+        position: relative;
+        font-family: "Ubuntu", sans-serif;
+        font-size: 24px;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        color: #000000;
+    }
+    
+    .cta svg {
+        position: relative;
+        top: -3px;
+        margin-left: 30px;
+        fill: none;
+        scale: 200%;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke: rgb(252, 177, 36);
+        stroke-width: 2;
+        transform: translateX(-5px);
+        transition: all 0.3s ease;
+    }
+    
+    .cta:hover:before {
+        width: 100%;
+        background: rgb(252, 177, 36);
+    }
+    .cta:hover span {
+        color: white;
+        transition: all 0.3s ease;
+    }
+    
+    .cta:hover svg {
+        transform: translateX(0);
+        stroke: white;
+        transition: all 0.3s ease;
+    }
+    
+    .cta:active {
+        transform: scale(0.95);
     }
 
 </style>

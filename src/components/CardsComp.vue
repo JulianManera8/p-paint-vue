@@ -56,7 +56,7 @@
         display: flex;
         text-align: center;
         justify-content: center;
-        font-size: clamp(4vw, 4vw, 20px);
+        // font-size: clamp(4vw, 4vw, 20px);
         font-family: "Montserrat", sans-serif;
         margin-top: 70px;
         margin-bottom: 40px;

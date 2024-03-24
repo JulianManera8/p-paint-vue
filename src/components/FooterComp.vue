@@ -1,12 +1,14 @@
 <template>
     <footer class="footer">
         <div class="footer-content">
-            <div class="cont-logo-titulo"> 
-                <div class="imagen">
-                    <img class="logo" src="../assets/imagenes/img-navbar/logo.png" width="170px">
+            <router-link id="a" to="/" style="text-decoration: none; color: black;">
+                <div class="cont-logo-titulo"> 
+                    <div class="imagen">
+                        <img class="logo" src="../assets/imagenes/img-navbar/logo.png" width="170px">
+                    </div>
+                    <h3 class="titulo"> Print & Paint.</h3>
                 </div>
-                <h3 class="titulo"> Print & Paint.</h3>
-            </div>
+            </router-link>
 
             <div class="container-navegacion">
                 <h5>NAVEGACION</h5>

@@ -71,7 +71,7 @@
     h1 {
         text-align: center;
         font-family: "Noto Sans", sans-serif;
-        font-size: clamp(4vw, 4vw, 20px);
+        // font-size: clamp(4vw, 4vw, 20px);
     }
     .container-contacto {
         margin: 0px 100px 200px 100px;

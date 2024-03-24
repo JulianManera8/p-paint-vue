@@ -7,7 +7,7 @@
         :loop="true"
         :modules="modules"
         :autoplay="{
-            delay: 1750,
+            delay: 1000,
             disableOnInteraction: true,
         }"
         class="mySwiper"
