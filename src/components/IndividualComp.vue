@@ -23,17 +23,21 @@
                 </div>
 
                 <div class="container-botones">
-                    <div class="cont-volver">
+                    <router-link to="/figuras" class="cont-volver">
                         <button> Volver </button>
-                    </div>
+                    </router-link >
                     <div class="cont-cotiz">
-                        <button class="cta">
-                          <span>Pedir cotizacion</span>
-                          <svg width="15px" height="10px" viewBox="0 0 13 10">
-                            <path d="M1,5 L11,5"></path>
-                            <polyline points="8 1 12 5 8 9"></polyline>
-                          </svg>
-                        </button>
+                            <button class="cta">
+                                    <span>
+                                        <a href="https://wa.me/543413076880"  @click="enviarWsp(infoFigura.nombre)" class="wsp" target="_blank" style="text-decoration: none; color: black ">
+                                            <span> Pedir cotizacion</span>
+                                        </a>
+                                    </span>
+                                    <svg width="15px" height="10px" viewBox="0 0 13 10">
+                                      <path d="M1,5 L11,5"></path>
+                                      <polyline points="8 1 12 5 8 9"></polyline>
+                                    </svg>
+                            </button>
                     </div>
                 </div>
 
@@ -199,6 +203,19 @@
 
     updateSlidesPerView();
     window.addEventListener('resize', updateSlidesPerView);
+
+
+    //mandar wsp
+    const enviarWsp = (nombre) => {
+
+        var numerowsp = 543413076880
+        var mensaje = `Hola, quisiera información y cotizacion de la figura: ${nombre}`;
+        var whatsappLink = 'whatsapp://send?phone=' + numerowsp + '&text=' + encodeURIComponent(mensaje);
+        window.location.href = whatsappLink;
+
+        return;
+    }  
+
 
 </script>
 
@@ -401,18 +418,38 @@
     .cont-volver {
         display: flex;
         text-align: center;
-        margin-left: 10px;
+        margin-left: 5px;
         @media (width < 992px) {
             justify-content: center;
             margin: 0;
         }
+        background: radial-gradient(circle, rgba(0, 0, 0, 0.178), white);
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        padding: 3px;
+        cursor: pointer;
+        border: 2px solid rgba(0, 0, 0, 0.426);
+        transition: all 0.3s;
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+        font-family: "Montserrat", sans-serif;
+        scale: 75%;
+    }
+
+    .cont-volver:hover {
+        transition: all 0.2s;
+        box-shadow: inset 0px 0px 20px rgba(0, 0, 0, 0.398);
+        background: radial-gradient(circle, rgba(0, 0, 0, 0), white);
+
     }
 
     .cont-cotiz {
-        // min-width:170px;
+        min-width:285px;
         display: flex;
         width: fit-content !important;
-        flex-wrap: nowrap;
+        flex-wrap: nowrap !important;
     }
 
     .container-btn {
@@ -565,7 +602,7 @@
         background: rgb(252, 177, 36);
     }
     .cta:hover span {
-        color: white;
+        color: white !important;
         transition: all 0.3s ease;
     }
     

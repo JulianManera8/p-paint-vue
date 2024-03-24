@@ -33,7 +33,6 @@
 
 <script setup>
     import infoFigEs from '../assets/JSON/infoFigEs.json'
-    // import infoFigEn from '../assets/JSON/infoFigEn.json'
 
 
     const infoFiguras = [
@@ -44,6 +43,9 @@
         {img: require('@/assets/imagenes/broly/1broly.png'), alt: 'broly', id:"broly", nombre: infoFigEs.broly.nombreFigura, btn: 'ver mas'},
         {img: require('@/assets/imagenes/fatbuu/1fatbuu.png'), alt: 'fatbuu', id:"fatbuu", nombre: infoFigEs.fatbuu.nombreFigura, btn: 'ver mas'},
     ]
+    
+    
+
     
 </script>
 

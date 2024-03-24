@@ -27,16 +27,18 @@
             </transition>
         </div>
 
-        <div class="container-lenguaje" style="opacity: 0;">
-            <div>
-                <img class="flag" src="../assets/imagenes/img-navbar/es.svg" alt="" width="25px">
-            </div>
-            <div>
-                <img class="flag" src="../assets/imagenes/img-navbar/gb.svg" alt="" width="25px">
-            </div>
+        <div class="container-lenguaje">
+            <router-link id="a" to="/figuras">
+                <v-icon @click="lupaTocada = !lupaTocada" name="io-search-sharp" scale="1.5" animation="pulse"  title="Buscar" color="black" speed="slow"/>
+
+                <transition name="inputBuscar"> 
+                    <input v-if="lupaTocada" type="text" placeholder="Buscar Figura" class="inputBuscar" v-model="valorBusqueda" @keyup="handleSerch">
+                </transition>
+            </router-link>
         </div>
 
     </section>
+    
 </template>
 
 <script setup>
@@ -46,6 +48,16 @@
     const desplegarMenu = () => {
         menuVisible.value = !menuVisible.value;
     }
+
+    //todo lo del search bar
+    var lupaTocada = ref(true);
+
+    var valorBusqueda = ref('');
+
+    const handleSerch = () => {
+        console.log(valorBusqueda.value)
+    }
+
 
 
 </script>
@@ -94,16 +106,9 @@
     }
     
     .container-lenguaje {
-        display: flex;
-        gap: 10px;
-        margin-right: 15px;
+        display: flex;  
         width: 60px;
         align-items: center;
-
-        .flag {
-            display: block;
-            cursor: pointer;
-        }
     }
     
     .container-nav-resp {
@@ -115,12 +120,35 @@
     }
 
     .navResp-enter-active, .navResp-leave-active {
-        transition: all 0.5s ease;
+        transition: all 0.3s ease;
     }
 
     .navResp-enter-from, .navResp-leave-to {
         opacity: 0;
     }
+
+    .inputBuscar {
+        position: absolute;
+        right: 0;
+        top: 74.5px;
+        padding: 4px;
+        border: 4px solid $fondo-navbar;
+        border-bottom-left-radius: 0.5em;
+    }
+
+    .inputBuscar-enter-from {
+        position: absolute;
+    }
+
+    .inputBuscar-enter-active, .inputBuscar-leave-active {
+        transition: all 0.3s ease;
+    }
+
+    .inputBuscar-enter-from, .inputBuscar-leave-to {
+        transform: translateX(300px);
+    }
+
+    
 
     @media (width < 581px) {
 
