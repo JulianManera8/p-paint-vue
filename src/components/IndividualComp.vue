@@ -24,7 +24,7 @@
 
                 <div class="container-botones">
                     <router-link to="/figuras" class="cont-volver">
-                        <button> Volver </button>
+                        <button> <span> Volver </span> </button>
                     </router-link >
                     <div class="cont-cotiz">
                             <button class="cta">
@@ -417,7 +417,7 @@
 
     .cont-volver {
         display: flex;
-        text-align: center;
+        text-align: center !important;
         margin-left: 5px;
         @media (width < 992px) {
             justify-content: center;
@@ -436,14 +436,24 @@
         font-weight: bold;
         font-family: "Montserrat", sans-serif;
         scale: 75%;
+
+        span {
+            display: flex !important;
+            margin-right: -50px;
+            @media (width < 992px) {
+            justify-content: center;
+            margin: 0;
+            }
+        }
     }
 
     .cont-volver:hover {
         transition: all 0.2s;
         box-shadow: inset 0px 0px 20px rgba(0, 0, 0, 0.398);
         background: radial-gradient(circle, rgba(0, 0, 0, 0), white);
-
     }
+
+
 
     .cont-cotiz {
         min-width:285px;
