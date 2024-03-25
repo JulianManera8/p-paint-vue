@@ -1,13 +1,14 @@
 <template>
     <div id="todo">
         <h1>FIGURAS</h1>
+
         <section> 
 
-            <div  v-for="(figura, id) in infoFiguras" :key="id">
+            <div  v-for="(figura, id) in arregloFiltrado" :key="id">
                 <router-link class="container-card" :id="figura.id" :to="{name: 'individual', params: {id: figura.id}}">
 
                     <div class="container-foto">
-                        <img class="img" :src="figura.img" :alt="figura.alt"/>
+                        <img class="img" :src="figura.img" :alt="figura.alt" :title="figura.nombre"/>
                     </div>
 
                     <div class="container-titulo">
@@ -33,16 +34,41 @@
 
 <script setup>
     import infoFigEs from '../assets/JSON/infoFigEs.json'
-
-
+    import { useSearchStore } from '../store/search.js'
+    import { ref, watch } from 'vue';
+    
     const infoFiguras = [
-        {img: require('@/assets/imagenes/goku/1goku.png'), alt: 'goku', id:"goku", nombre: infoFigEs.goku.nombreFigura, btn: 'ver mas'},
-        {img: require('@/assets/imagenes/kidbuu/1kidbuu.png'), alt: 'kidbuu', id:"kidbuu", nombre: infoFigEs.kidbuu.nombreFigura, btn: 'ver mas'},
-        {img: require('@/assets/imagenes/frieza/1frieza.png'), alt: 'frieza', id:"frieza", nombre: infoFigEs.frieza.nombreFigura, btn: 'ver mas'},
-        {img: require('@/assets/imagenes/ozaru/1ozaru.png'), alt: 'ozaru', id:"ozaru", nombre: infoFigEs.ozaru.nombreFigura, btn: 'ver mas'},
-        {img: require('@/assets/imagenes/broly/1broly.png'), alt: 'broly', id:"broly", nombre: infoFigEs.broly.nombreFigura, btn: 'ver mas'},
-        {img: require('@/assets/imagenes/fatbuu/1fatbuu.png'), alt: 'fatbuu', id:"fatbuu", nombre: infoFigEs.fatbuu.nombreFigura, btn: 'ver mas'},
+        {img: require('@/assets/imagenes/goku/1goku.png'), alt: 'goku', id:"goku", nombre: infoFigEs.goku.nombreFigura},
+        {img: require('@/assets/imagenes/kidbuu/1kidbuu.png'), alt: 'kidbuu', id:"kidbuu", nombre: infoFigEs.kidbuu.nombreFigura},
+        {img: require('@/assets/imagenes/frieza/1frieza.png'), alt: 'frieza', id:"frieza", nombre: infoFigEs.frieza.nombreFigura},
+        {img: require('@/assets/imagenes/ozaru/1ozaru.png'), alt: 'ozaru', id:"ozaru", nombre: infoFigEs.ozaru.nombreFigura},
+        {img: require('@/assets/imagenes/broly/1broly.png'), alt: 'broly', id:"broly", nombre: infoFigEs.broly.nombreFigura},
+        {img: require('@/assets/imagenes/fatbuu/1fatbuu.png'), alt: 'fatbuu', id:"fatbuu", nombre: infoFigEs.fatbuu.nombreFigura},
     ]
+    var arregloFiltrado = ref([])
+    
+
+    
+    const store = useSearchStore()
+    const value = ref(store.value);
+
+
+    watch(() => store.value, (newValue) => {
+        value.value = newValue
+        if (newValue.trim() === "") {
+            arregloFiltrado.value = infoFiguras;
+        } else {
+            arregloFiltrado.value = infoFiguras.filter(figura => {
+                return figura.nombre.toLowerCase().includes(newValue.toLowerCase());
+            });
+        }
+    });
+
+    arregloFiltrado.value = infoFiguras;
+
+
+
+
     
     
 

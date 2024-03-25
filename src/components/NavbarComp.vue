@@ -4,7 +4,7 @@
             <router-link to="/">
                 <img class="logo" src="../assets/imagenes/img-navbar/logo.png" width="75px">
             </router-link>
-        </div>
+        </div> 
 
         <div class="container-navegacion">
             <router-link id="a" to="/">INICIO</router-link> 
@@ -14,25 +14,28 @@
         </div>
 
         <div class="container-nav-resp">
-            <v-icon class="nav-resp-icono" @click="desplegarMenu" name="gi-hamburger-menu" scale="2" cursor="pointer"/>
-            <transition name="navResp">
+            <v-icon v-if="!menuVisible" class="nav-resp-icono" @click="desplegarMenu" name="gi-hamburger-menu" scale="2" cursor="pointer"/>
+            <v-icon v-if="menuVisible" @click="desplegarMenu" name="md-close-outlined" scale="2" title="Buscar" color="black" cursor="pointer"/>
+
+            <transition name="navResp"> 
                 <div v-if="menuVisible" class="nav-resp-lista" id="nav-resp-lista">
                     <ul>
-                        <li><router-link @click="desplegarMenu" id="a" to="/">INICIO</router-link> </li>
-                        <li><router-link @click="desplegarMenu" id="a" to="/figuras">FIGURAS</router-link></li>
-                        <li><router-link @click="desplegarMenu" id="a" to="/contacto">CONTACTO</router-link></li>
-                        <li><router-link @click="desplegarMenu" id="a" to="/blog">BLOG</router-link></li>
+                        <li><router-link @click="desplegarMenu" class="router-l" id="a" to="/">INICIO</router-link> </li>
+                        <li><router-link @click="desplegarMenu" class="router-l" id="a" to="/figuras">FIGURAS</router-link></li>
+                        <li><router-link @click="desplegarMenu" class="router-l" id="a" to="/contacto">CONTACTO</router-link></li>
+                        <li><router-link @click="desplegarMenu" class="router-l" id="a" to="/blog">BLOG</router-link></li>
                     </ul>
                 </div>
             </transition>
         </div>
 
-        <div class="container-lenguaje">
+        <div class="container-search">
             <router-link id="a" to="/figuras">
-                <v-icon @click="lupaTocada = !lupaTocada" name="io-search-sharp" scale="1.5" animation="pulse"  title="Buscar" color="black" speed="slow"/>
+                <v-icon v-if="!lupaTocada" @click="lupaTocada = !lupaTocada" name="io-search-sharp" scale="1.5" animation="pulse"  title="Buscar" color="black" speed="slow"/>
+                <v-icon v-if="lupaTocada" @click="lupaTocada = !lupaTocada" name="md-close-outlined" scale="1.5" animation="pulse"  title="Buscar" color="black" speed="slow"/>
 
                 <transition name="inputBuscar"> 
-                    <input v-if="lupaTocada" type="text" placeholder="Buscar Figura" class="inputBuscar" v-model="valorBusqueda" @keyup="handleSerch">
+                    <input v-if="lupaTocada" type="text" placeholder="Buscar Figura" class="inputBuscar" v-model="valorBusqueda" @keyup="asignarValor">
                 </transition>
             </router-link>
         </div>
@@ -43,6 +46,9 @@
 
 <script setup>
     import {ref} from 'vue'
+    import { useSearchStore } from '../store/search.js'
+
+
     var menuVisible = ref(false);
 
     const desplegarMenu = () => {
@@ -52,13 +58,12 @@
     //todo lo del search bar
     var lupaTocada = ref(false);
 
+    const store = useSearchStore()
     var valorBusqueda = ref('');
 
-    const handleSerch = () => {
-        console.log(valorBusqueda.value)
+    const asignarValor = () => {
+        return store.valorBuscado = valorBusqueda.value;
     }
-
-
 
 </script>
 
@@ -100,12 +105,12 @@
             color: $texto-navbar;
         }
 
-        #a:hover {
-            color: $texto-navbar-hover;
+        #a:hover, .router-l:hover {
+            color: $texto-navbar-hover !important;
         }
     }
     
-    .container-lenguaje {
+    .container-search {
         display: flex;  
         width: 60px;
         align-items: center;
@@ -162,6 +167,7 @@
 
         .container-nav-resp {
             display: flex;
+            margin-right: 17px
         }
 
         .nav-resp-lista {
