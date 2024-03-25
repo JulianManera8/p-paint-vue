@@ -32,12 +32,14 @@
         <div class="container-search">
             <router-link id="a" to="/figuras">
                 <v-icon v-if="!lupaTocada" @click="lupaTocada = !lupaTocada" name="io-search-sharp" scale="1.5" animation="pulse"  title="Buscar" color="black" speed="slow"/>
-                <v-icon v-if="lupaTocada" @click="lupaTocada = !lupaTocada" name="md-close-outlined" scale="1.5" animation="pulse"  title="Buscar" color="black" speed="slow"/>
-
-                <transition name="inputBuscar"> 
-                    <input v-if="lupaTocada" type="text" placeholder="Buscar Figura" class="inputBuscar" v-model="valorBusqueda" @keyup="asignarValor">
-                </transition>
             </router-link>
+
+            <v-icon v-if="lupaTocada" @click="lupaTocada = !lupaTocada" name="md-close-outlined" scale="1.5" animation="pulse"  title="Buscar" color="black" speed="slow" cursor="pointer"/>
+        
+            <transition name="inputBuscar"> 
+                <input v-if="lupaTocada" type="text" placeholder="Buscar Figura" class="inputBuscar" v-model="valorBusqueda" @keyup="asignarValor">
+            </transition>
+
         </div>
 
     </section>

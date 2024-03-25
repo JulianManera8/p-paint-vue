@@ -26,8 +26,11 @@
 
                 </router-link>
 
-
             </div>
+        </section>
+
+        <section class="cont-nofigura" v-if="sinFigura" style="margin-bottom: 200px;">
+            <h4 class="noFigura"> No hay ninguna figura con ese nombre. <br>Prueba otro!</h4>
         </section>
     </div>
 </template>
@@ -48,22 +51,28 @@
     var arregloFiltrado = ref([])
     
 
-    
     const store = useSearchStore()
     const value = ref(store.value);
 
+    var sinFigura = ref(false)
 
     watch(() => store.value, (newValue) => {
         value.value = newValue
         if (newValue.trim() === "") {
             arregloFiltrado.value = infoFiguras;
+            sinFigura.value = false
         } else {
             arregloFiltrado.value = infoFiguras.filter(figura => {
+                sinFigura.value = false
                 return figura.nombre.toLowerCase().includes(newValue.toLowerCase());
             });
+
+            if(arregloFiltrado.value.length === 0) {
+                sinFigura.value = true
+            }
         }
     });
-
+    
     arregloFiltrado.value = infoFiguras;
 
 
@@ -184,6 +193,19 @@
     .container-btn {
         margin-top: 7px;
     }
+
+    .cont-nofigura {
+        width: 90%;
+        margin: auto
+    }
+
+    .noFigura {
+        width: 100%;
+
+        @media (width < 450px) {
+            font-size: large;
+        }
+    }
     
     //ESTILOS BOTON MAS INFO
     
@@ -277,10 +299,6 @@
 
 
     @media (width < 400px) {
-
-        h1 {
-            font-size: large;
-        }
 
         .container-card {
             width: 250px !important;
