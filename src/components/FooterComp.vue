@@ -171,6 +171,7 @@
                 font-size: 15px;
                 cursor: pointer;
                 transition: 0.5s;
+                color: black
             };
         }
         

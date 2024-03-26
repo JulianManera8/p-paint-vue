@@ -23,9 +23,11 @@
                 </div>
 
                 <div class="container-botones">
-                    <router-link to="/figuras" class="cont-volver">
-                        <button> <span> Volver </span> </button>
-                    </router-link >
+                    <div>
+                        <router-link to="/figuras" class="cont-volver">
+                            <button>  Volver  </button>
+                        </router-link >
+                    </div>
                     <div class="cont-cotiz">
                             <button class="cta">
                                     <span>
@@ -399,6 +401,8 @@
         text-transform: uppercase;
         font-size: clamp(4vw, 4vw, 20px);
         margin-bottom: 20px;
+        font-family: "Montserrat", sans-serif;
+
     }
 
     .container-botones {
@@ -417,7 +421,8 @@
 
     .cont-volver {
         display: flex;
-        text-align: center !important;
+        text-align: center;
+        justify-content: center;
         margin-left: 5px;
         @media (width < 992px) {
             justify-content: center;
@@ -425,26 +430,17 @@
         }
         background: radial-gradient(circle, rgba(0, 0, 0, 0.178), white);
         border-radius: 50%;
-        width: 50px;
-        height: 50px;
+        width: 40px;
+        height: 40px;
         padding: 3px;
         cursor: pointer;
         border: 2px solid rgba(0, 0, 0, 0.426);
         transition: all 0.3s;
         text-decoration: none;
         color: black;
-        font-weight: bold;
         font-family: "Montserrat", sans-serif;
-        scale: 75%;
 
-        span {
-            display: flex !important;
-            margin-right: -50px;
-            @media (width < 992px) {
-            justify-content: center;
-            margin: 0;
-            }
-        }
+        
     }
 
     .cont-volver:hover {
@@ -452,7 +448,6 @@
         box-shadow: inset 0px 0px 20px rgba(0, 0, 0, 0.398);
         background: radial-gradient(circle, rgba(0, 0, 0, 0), white);
     }
-
 
 
     .cont-cotiz {
