@@ -1,7 +1,7 @@
 {
     "tecnicas": {
         "titulo": "Técnicas de pintado de figuras 3D",
-        "descripcionFront": "Exponer arte mediante figuras impresas en 3D, posee sus propias técnicas...",
+        "descripcionFront": "Exponer arte mediante figuras impresas en 3D posee sus propias técnicas...",
         "descripcionBack": "Las técnicas varían según la disponibilidad de materiales y la experiencia del artista, pero las más utilizadas son las conocidas como 'pincel seco' y 'lavado'. La primera consiste en cargar el pincel con poca pintura, manteniéndolo seco, para luego pasarlo por las partes con relieve y así resaltarlas con luces. La segunda técnica, el lavado, implica diluir mucho la pintura y aplicarla en las áreas más profundas de la figura para crear sombras."
     },
     "materiales": {
@@ -17,6 +17,6 @@
     "dragonball": {
         "titulo": "¿Por qué Dragon Ball?",
         "descripcionFront": "Para muchos, Dragon Ball es más que simples dibujos, es una forma de ver la vida...",
-        "descripcionBack": "Elijo pintar unicamente figuras sobre Dragon Ball, debido a que es algo que me acompaño toda la vida, adoptando muchas enseñanzas y formas de encarar la vida propias de este 'dibujo'. Sus personajes no dejan de sorprender superando simepre sus limites, tanto fisicos como personales, regalandonos grandes batallas, externas e internas."
+        "descripcionBack": "Elijo pintar únicamente figuras sobre Dragon Ball, debido a que es algo que me ha acompañado toda la vida, adoptando muchas enseñanzas y formas de encarar determinadas situaciones propias de este 'dibujo'. Sus personajes no dejan de sorprender, superando siempre sus límites, tanto físicos como personales, regalándonos grandes batallas, externas e internas."
     }
 }

@@ -152,12 +152,14 @@
 
   .container-card {
     width: 600px;
-    height: 250px;
+    height: 265px;
     display: flex;
     flex-direction: row;
     border-radius: 1.5em;
     box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.739);
     transition: 0.2s ease-out;
+
+    
   }
 
   .container-card:hover {
@@ -188,6 +190,10 @@
     }
 
         
+  }
+
+  button .volver {
+   color: red;
   }
 
   .img {
@@ -222,7 +228,7 @@
     .container-btn {
         text-align: center;
         position: absolute;
-        bottom: 15px !important;
+        bottom: 0px !important;
         width: 100%;
     }
         
