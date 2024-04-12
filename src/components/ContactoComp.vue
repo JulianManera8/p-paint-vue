@@ -48,7 +48,7 @@
     const enviarWsp = () => {
 
         var numerowsp = 543413076880
-        var mensaje = `Hola, quisiera información y cotizacion de la figura: `;
+        var mensaje = `Hola, te queria consultar sobre: `;
         var whatsappLink = 'whatsapp://send?phone=' + numerowsp + '&text=' + encodeURIComponent(mensaje);
         window.location.href = whatsappLink;
 
